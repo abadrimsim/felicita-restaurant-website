@@ -1,0 +1,16 @@
+/* bootstrap */
+@import url('bootstrap/dist/css/bootstrap.min.css');
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Rufina:wght@400;700&display=swap');
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}

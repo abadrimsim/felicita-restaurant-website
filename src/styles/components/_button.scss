@@ -1,0 +1,33 @@
+@mixin custombtn {
+	font-size: 0.8rem;
+	font-weight: 600;
+	padding: 0.7em 4em;
+	text-transform: uppercase;
+	border: 1px solid transparent;
+	transition: all 0.15s linear;
+
+	&:hover {
+		background-color: transparent;
+	}
+}
+
+.btnDark {
+	@include custombtn;
+	background-color: $primary;
+	color: $tertiary-med;
+
+	&:hover {
+		color: $primary;
+		border: 1px solid $primary;
+	}
+}
+
+.btnTan {
+	@include custombtn;
+	background-color: $secondary;
+	color: $tertiary-med;
+
+	&:hover {
+		border: 1px solid $secondary;
+	}
+}

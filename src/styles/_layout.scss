@@ -1,0 +1,67 @@
+.container {
+	padding: 15vh 1em;
+	margin: 0 auto;
+
+	h2 {
+		font-family: 'Rufina', serif;
+		font-weight: bold;
+		line-height: 1.5em;
+	}
+
+	h3 {
+		font-family: 'Rufina', serif;
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
+
+	p {
+		margin: 2em 0 3em;
+		font-size: 0.9rem;
+		color: $primary-light;
+	}
+}
+
+@include md {
+	.container {
+		padding: 25vh 2em;
+
+		h2 {
+			font-size: 2rem;
+		}
+
+		h3 {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+@include lg {
+	.container {
+		padding: 25vh 6em;
+
+		p {
+			font-size: 1rem;
+		}
+	}
+}
+
+@include xl {
+	.container {
+		padding: 25vh 10em;
+	}
+}
+
+@include xxl {
+	.container {
+		padding: 25vh 15em;
+
+		h2 {
+			font-size: 2.25rem;
+			width: 60%;
+		}
+
+		h3 {
+			font-size: 1.8rem;
+		}
+	}
+}

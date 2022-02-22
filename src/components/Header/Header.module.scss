@@ -1,0 +1,104 @@
+@import '../../styles/index';
+
+.header {
+	background-color: $primary;
+	background-image: url('/header.jpg');
+	background-size: cover;
+	background-position-x: 55vw;
+	background-repeat: no-repeat;
+	height: 40em;
+	position: relative;
+}
+
+// Navigation Bar
+
+.navContainer {
+	// background-color: none;
+	background-color: $primary;
+	opacity: 0.95;
+	padding: 0.5em 1em;
+}
+
+.brand {
+	font-family: 'Rufina', serif;
+	font-weight: bold;
+	color: $tertiary-med !important;
+}
+
+.navLink {
+	color: $tertiary-med !important;
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+// Header Text
+.textContainer {
+	padding: 12em 1em;
+	text-align: center;
+
+	.title {
+		font-size: 2.25rem;
+		font-family: 'Rufina', serif;
+		color: $tertiary-med;
+	}
+
+	.subtitle {
+		color: $primary-light;
+		margin: 1em 0 2.5em;
+	}
+}
+
+// Breakpoints
+
+@include md {
+	.navContainer {
+		padding: 1em 2em;
+	}
+
+	.textContainer {
+		width: 50%;
+		text-align: left;
+		padding: 10em 2em;
+	}
+}
+
+@include lg {
+	.header {
+		background-size: contain;
+		height: 55em;
+	}
+
+	.navContainer {
+		padding: 1em 6em;
+	}
+
+	.textContainer {
+		text-align: left;
+		padding: 15em 0 10em 6em;
+
+		.title {
+			font-size: 3.5rem;
+		}
+	}
+}
+
+@include xl {
+	.navContainer {
+		padding: 1em 10em;
+	}
+
+	.textContainer {
+		padding: 15em 0 10em 10em;
+	}
+}
+
+@include xxl {
+	.navContainer {
+		padding: 1em 15em;
+	}
+
+	.textContainer {
+		width: 40%;
+		padding: 15em 0 10em 15em;
+	}
+}
