@@ -1,6 +1,7 @@
 .container {
 	padding: 15vh 1em;
 	margin: 0 auto;
+	position: relative;
 
 	h2 {
 		font-family: 'Rufina', serif;
@@ -48,6 +49,10 @@
 @include xl {
 	.container {
 		padding: 25vh 10em;
+
+		h2 {
+			width: 60%;
+		}
 	}
 }
 
@@ -57,7 +62,6 @@
 
 		h2 {
 			font-size: 2.25rem;
-			width: 60%;
 		}
 
 		h3 {

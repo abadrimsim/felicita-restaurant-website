@@ -22,11 +22,11 @@
 .brand {
 	font-family: 'Rufina', serif;
 	font-weight: bold;
-	color: $tertiary-med !important;
+	color: $tertiary !important;
 }
 
 .navLink {
-	color: $tertiary-med !important;
+	color: $tertiary !important;
 	font-size: 0.9rem;
 	font-weight: 600;
 }
@@ -52,7 +52,7 @@
 
 @include md {
 	.navContainer {
-		padding: 1em 2em;
+		padding: 0.8em 2em;
 	}
 
 	.textContainer {
@@ -65,11 +65,10 @@
 @include lg {
 	.header {
 		background-size: contain;
-		height: 55em;
 	}
 
 	.navContainer {
-		padding: 1em 6em;
+		padding: 0.8em 6em;
 	}
 
 	.textContainer {
@@ -84,17 +83,21 @@
 
 @include xl {
 	.navContainer {
-		padding: 1em 10em;
+		padding: 0.8em 10em;
 	}
 
 	.textContainer {
-		padding: 15em 0 10em 10em;
+		padding: 10em 0 10em 10em;
 	}
 }
 
 @include xxl {
+	.header {
+		height: 55em;
+	}
+
 	.navContainer {
-		padding: 1em 15em;
+		padding: 0.8em 15em;
 	}
 
 	.textContainer {
