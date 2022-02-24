@@ -1,5 +1,12 @@
-/* bootstrap */
+// Bootstrap
 @import url('bootstrap/dist/css/bootstrap.min.css');
+
+// SASS
+@import './index';
+
+// Slick Slider
+@import url('~slick-carousel/slick/slick.css');
+@import url('~slick-carousel/slick/slick-theme.css');
 
 // Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Rufina:wght@400;700&display=swap');
@@ -13,4 +20,30 @@ body {
 
 * {
 	box-sizing: border-box;
+}
+
+.slick-slider {
+	display: flex;
+	align-items: center;
+
+	.slick-arrow {
+		font-size: 1.5em;
+
+		color: $tertiary;
+		opacity: 0.6;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+@include lg {
+	.slick-slider {
+		.slick-arrow {
+			font-size: 2em;
+			margin: 0.3em;
+		}
+	}
 }

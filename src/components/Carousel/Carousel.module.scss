@@ -6,42 +6,46 @@
 	transform: skew(0deg, -10deg);
 	padding: 5em 1em;
 
-	.content {
+	.carouselContainer {
 		transform: skew(0deg, 10deg);
-		display: flex;
-		color: $tertiary;
-		justify-content: space-between;
 
-		.testimonial {
-			margin: auto 0;
+		.content {
+			padding: 0 1.1em;
+			display: flex !important;
+			color: $tertiary;
+			justify-content: space-between;
 
-			span {
-				display: flex;
-				align-items: center;
-				justify-content: flex-end;
+			.testimonial {
+				margin: auto 0;
+
+				span {
+					display: flex;
+					align-items: center;
+					justify-content: flex-end;
+				}
+
+				h2 {
+					width: 100%;
+				}
+
+				hr {
+					width: 2em;
+					margin-top: 2.25em;
+				}
+
+				p {
+					color: $tertiary;
+					margin-left: 0.5em;
+					margin-bottom: 0;
+					text-transform: uppercase;
+					font-weight: 600;
+					font-size: 0.7em;
+				}
 			}
 
-			h2 {
-				width: 100%;
+			.carouselImg {
+				display: none !important;
 			}
-
-			hr {
-				width: 2em;
-				margin-top: 2.25em;
-			}
-
-			p {
-				color: $tertiary;
-				margin-left: 0.5em;
-				margin-bottom: 0;
-				text-transform: uppercase;
-				font-weight: 600;
-				font-size: 0.7em;
-			}
-		}
-
-		.carouselImg {
-			display: none !important;
 		}
 	}
 }
@@ -56,15 +60,18 @@
 	.container {
 		padding: 0 6em;
 
-		.content {
-			gap: 3em;
+		.carouselContainer {
+			.content {
+				padding: 0 1.5em;
+				gap: 3em;
 
-			.testimonial {
-				width: 75%;
-			}
+				.testimonial {
+					width: 75%;
+				}
 
-			.carouselImg {
-				display: block !important;
+				.carouselImg {
+					display: block !important;
+				}
 			}
 		}
 	}
@@ -75,8 +82,10 @@
 		margin: 15vh 0;
 		padding: 0 10em;
 
-		.content {
-			padding: 0 2em;
+		.carouselContainer {
+			.content {
+				padding: 0 2em;
+			}
 		}
 	}
 }
@@ -84,20 +93,20 @@
 @include xxl {
 	.container {
 		margin: 25vh 0;
-		padding: 0 15em;
+		padding: 0 10em;
 
-		.content {
-			padding: 0 5em;
+		.carouselContainer {
+			.content {
+				.testimonial {
+					width: 45%;
 
-			.testimonial {
-				width: 45%;
+					hr {
+						margin-top: 2.5em;
+					}
 
-				hr {
-					margin-top: 0;
-				}
-
-				p {
-					font-size: 0.9em;
+					p {
+						font-size: 0.9em;
+					}
 				}
 			}
 		}
