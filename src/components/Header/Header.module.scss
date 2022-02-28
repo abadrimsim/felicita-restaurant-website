@@ -8,56 +8,33 @@
 	background-repeat: no-repeat;
 	height: 40em;
 	position: relative;
-}
 
-// Navigation Bar
+	// Header Text
+	.textContainer {
+		padding: 12em 1em;
+		text-align: center;
 
-.navContainer {
-	background-color: $primary;
-	opacity: 0.95;
-	padding: 0.5em 1em;
-}
+		.title {
+			font-size: 2.25rem;
+			font-family: 'Rufina', serif;
+			color: $tertiary-med;
+		}
 
-.brand {
-	font-family: 'Rufina', serif;
-	font-weight: bold;
-	color: $tertiary !important;
-}
-
-.navLink {
-	color: $tertiary !important;
-	font-size: 0.9rem;
-	font-weight: 600;
-}
-
-// Header Text
-.textContainer {
-	padding: 12em 1em;
-	text-align: center;
-
-	.title {
-		font-size: 2.25rem;
-		font-family: 'Rufina', serif;
-		color: $tertiary-med;
-	}
-
-	.subtitle {
-		color: $primary-light;
-		margin: 1em 0 2.5em;
+		.subtitle {
+			color: $primary-light;
+			margin: 1em 0 2.5em;
+		}
 	}
 }
 
 // Breakpoints
-
 @include md {
-	.navContainer {
-		padding: 0.8em 2em;
-	}
-
-	.textContainer {
-		width: 50%;
-		text-align: left;
-		padding: 10em 2em;
+	.header {
+		.textContainer {
+			width: 50%;
+			text-align: left;
+			padding: 10em 2em;
+		}
 	}
 }
 
@@ -65,43 +42,33 @@
 	.header {
 		background-size: contain;
 		height: 45em;
-	}
 
-	.navContainer {
-		padding: 0.8em 6em;
-	}
+		.textContainer {
+			text-align: left;
+			padding: 15em 0 10em 6em;
 
-	.textContainer {
-		text-align: left;
-		padding: 15em 0 10em 6em;
-
-		.title {
-			font-size: 3.5rem;
+			.title {
+				font-size: 3.5rem;
+			}
 		}
 	}
 }
 
 @include xl {
-	.navContainer {
-		padding: 0.8em 10em;
-	}
-
-	.textContainer {
-		padding: 10em 0 10em 10em;
+	.header {
+		.textContainer {
+			padding: 10em 0 10em 10em;
+		}
 	}
 }
 
 @include xxl {
 	.header {
 		height: 55em;
-	}
 
-	.navContainer {
-		padding: 0.8em 15em;
-	}
-
-	.textContainer {
-		width: 40%;
-		padding: 15em 0 10em 15em;
+		.textContainer {
+			width: 40%;
+			padding: 15em 0 10em 15em;
+		}
 	}
 }

@@ -1,0 +1,22 @@
+@import '../../styles/index';
+
+.bannerContainer {
+	display: flex;
+	justify-content: space-between;
+	background-color: $primary;
+	align-items: center;
+	color: $tertiary;
+	height: 30em;
+	overflow: hidden;
+	padding: 4em 15em 0 0;
+
+	.bannerImg {
+		opacity: 0.4;
+	}
+
+	h1 {
+		font-size: 2.25rem;
+		font-family: 'Rufina', serif;
+		color: $tertiary-med;
+	}
+}

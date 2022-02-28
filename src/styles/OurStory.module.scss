@@ -1,0 +1,29 @@
+@import 'index';
+
+.pageContent {
+	margin: 15em;
+	display: flex;
+	justify-content: space-between;
+
+	.pageText {
+		width: 50%;
+
+		h2 {
+			font-family: 'Rufina', serif;
+			font-weight: bold;
+			line-height: 1.5em;
+		}
+
+		.divider {
+			color: $secondary-light;
+			opacity: 100%;
+			width: 5em;
+			margin-bottom: 3em;
+		}
+
+		p {
+			font-size: 0.9rem;
+			color: $primary-light;
+		}
+	}
+}

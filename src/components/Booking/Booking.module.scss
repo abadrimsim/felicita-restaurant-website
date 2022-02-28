@@ -1,0 +1,21 @@
+@import '../../styles/index';
+
+.container {
+	.divider {
+		color: $secondary-light;
+		opacity: 100%;
+		width: 15em;
+		margin-bottom: 7em;
+	}
+
+	.bookingCards {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 8em 0;
+
+		.bookingDesc {
+			width: 40%;
+		}
+	}
+}

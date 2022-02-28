@@ -1,0 +1,46 @@
+@import '../../styles/index';
+
+// Navigation Bar
+
+.navContainer {
+	background-color: $primary;
+	opacity: 0.95;
+	padding: 0.5em 1em;
+
+	.brand {
+		font-family: 'Rufina', serif;
+		font-weight: bold;
+		color: $tertiary !important;
+	}
+
+	.navLink {
+		color: $tertiary !important;
+		font-size: 0.9rem;
+		font-weight: 600;
+	}
+}
+
+// Breakpoints
+@include md {
+	.navContainer {
+		padding: 0.8em 2em;
+	}
+}
+
+@include lg {
+	.navContainer {
+		padding: 0.8em 6em;
+	}
+}
+
+@include xl {
+	.navContainer {
+		padding: 0.8em 10em;
+	}
+}
+
+@include xxl {
+	.navContainer {
+		padding: 0.8em 15em;
+	}
+}

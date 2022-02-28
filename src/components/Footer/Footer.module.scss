@@ -1,0 +1,57 @@
+@import '../../styles/index';
+
+.footerContainer {
+	display: flex;
+	background: $primary;
+	color: $tertiary;
+	justify-content: center;
+	padding-top: 5em;
+	gap: 10em;
+	height: 18em;
+
+	.tag {
+		font-family: 'Rufina', serif;
+		h5 {
+			font-weight: bold;
+		}
+		p {
+			font-size: 0.9em;
+		}
+	}
+
+	.sections {
+		display: flex;
+		gap: 2.5em;
+
+		p {
+			font-weight: bold;
+			font-size: 0.9em;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			font-size: 0.8em;
+			color: $primary-light;
+		}
+	}
+
+	.hours {
+		.hoursTitle {
+			font-weight: bold;
+			font-size: 0.9em;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			font-size: 0.8em;
+
+			li {
+				display: flex;
+				gap: 1em;
+				color: $primary-light;
+			}
+		}
+	}
+}
