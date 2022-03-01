@@ -22,10 +22,10 @@ function Navigation() {
 						<Nav.Link href='/menu' className={styles.navLink}>
 							Menu
 						</Nav.Link>
-						<Nav.Link href='#' className={styles.navLink}>
+						<Nav.Link href='/contact' className={styles.navLink}>
 							Contact
 						</Nav.Link>
-						<Nav.Link href='#' className={styles.navLink}>
+						<Nav.Link href='/' className={styles.navLink}>
 							Events
 						</Nav.Link>
 					</Nav>

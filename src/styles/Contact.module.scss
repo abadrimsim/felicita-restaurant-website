@@ -1,0 +1,69 @@
+@import 'index';
+
+.pageContent {
+	padding: 25vh 15em;
+	display: flex;
+	justify-content: space-between;
+
+	.pageText {
+		width: 45%;
+
+		h2 {
+			font-family: 'Rufina', serif;
+			font-weight: bold;
+			line-height: 1.5em;
+		}
+
+		.divider {
+			color: $secondary-light;
+			opacity: 100%;
+			width: 5em;
+			margin-bottom: 3em;
+		}
+
+		p,
+		label {
+			font-size: 0.9rem;
+			color: $primary-light;
+		}
+
+		br {
+			margin-bottom: 2em;
+		}
+
+		form {
+			margin: 4em 0;
+
+			label {
+				width: 40%;
+				margin-top: 0;
+				vertical-align: text-top;
+			}
+
+			input,
+			textarea {
+				vertical-align: text-top;
+				box-sizing: border-box;
+				border: 1px solid $primary-light;
+				font-size: 0.9rem;
+				padding: 0.35em;
+				width: 60%;
+
+				&:focus {
+					border: 1px solid $secondary-light;
+					outline: none;
+				}
+			}
+
+			.btnSubmit {
+				margin-top: 3em;
+				text-align: center;
+			}
+		}
+
+		.disclaimer {
+			font-style: italic;
+			font-size: 0.8em;
+		}
+	}
+}
