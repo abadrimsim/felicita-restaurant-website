@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Link from 'next/link';
 import styles from './Banner.module.scss';
 
 function Banner() {
@@ -9,7 +9,9 @@ function Banner() {
 				For a stunning event tailored to your every need, look no further than
 				Felicità!
 			</p>
-			<button className={styles.btnTan}>Book a Reservation</button>
+			<Link href='/contact' passHref>
+				<button className={styles.btnTan}>Book a Reservation</button>
+			</Link>
 		</div>
 	);
 }

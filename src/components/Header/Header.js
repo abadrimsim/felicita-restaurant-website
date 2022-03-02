@@ -1,6 +1,7 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import Navigation from '../Navigation/Navigation';
 import styles from './Header.module.scss';
+import Link from 'next/link';
 
 function Header() {
 	return (
@@ -12,7 +13,9 @@ function Header() {
 					Serious food in a chilled-out setting, without pretence or the
 					price-tag, offering guilt-free Italian dining.
 				</p>
-				<button className={styles.btnTan}>Book Now</button>
+				<Link href='/contact' passHref>
+					<button className={styles.btnTan}>Book Now</button>
+				</Link>
 			</div>
 		</div>
 	);

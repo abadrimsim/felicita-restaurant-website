@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './Story.module.scss';
 
 function Story() {
@@ -27,7 +28,9 @@ function Story() {
 						faultless service, it’s no wonder. Our food tastes just like Nonna
 						used to make! Join us for lunch, dinner and anytime in between.
 					</p>
-					<button className={styles.btnDark}>Learn More</button>
+					<Link href='/our-story' passHref>
+						<button className={styles.btnDark}>Learn More</button>
+					</Link>
 				</div>
 			</div>
 		</div>

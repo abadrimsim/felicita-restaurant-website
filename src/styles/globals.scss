@@ -39,6 +39,27 @@ body {
 	}
 }
 
+.nav-link {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: $tertiary !important;
+}
+
+.dropdown-menu {
+	background-color: $primary;
+
+	.dropdown-item {
+		color: $tertiary;
+		font-size: 0.9rem;
+		font-weight: 600;
+
+		&:hover {
+			color: $secondary-light;
+			background-color: $primary;
+		}
+	}
+}
+
 @include lg {
 	.slick-slider {
 		.slick-arrow {

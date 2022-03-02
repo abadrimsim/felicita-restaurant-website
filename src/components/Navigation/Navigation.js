@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import styles from './Navigation.module.scss';
 
 function Navigation() {
@@ -25,9 +25,14 @@ function Navigation() {
 						<Nav.Link href='/contact' className={styles.navLink}>
 							Contact
 						</Nav.Link>
-						<Nav.Link href='/' className={styles.navLink}>
-							Events
-						</Nav.Link>
+
+						<NavDropdown title='Events' id='navbarScrollingDropdown'>
+							<NavDropdown.Item href='/group-dining'>
+								Group Dining
+							</NavDropdown.Item>
+							<NavDropdown.Item href='/'>Private Dining</NavDropdown.Item>
+							<NavDropdown.Item href='/'>Exclusive Events</NavDropdown.Item>
+						</NavDropdown>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
