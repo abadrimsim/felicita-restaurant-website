@@ -30,8 +30,12 @@ function Navigation() {
 							<NavDropdown.Item href='/group-dining'>
 								Group Dining
 							</NavDropdown.Item>
-							<NavDropdown.Item href='/'>Private Dining</NavDropdown.Item>
-							<NavDropdown.Item href='/'>Exclusive Events</NavDropdown.Item>
+							<NavDropdown.Item href='/private-dining'>
+								Private Dining
+							</NavDropdown.Item>
+							<NavDropdown.Item href='/exclusive-events'>
+								Exclusive Events
+							</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
 				</Navbar.Collapse>

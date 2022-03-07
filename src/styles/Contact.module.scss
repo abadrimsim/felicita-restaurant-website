@@ -1,12 +1,15 @@
 @import 'index';
 
 .pageContent {
-	padding: 25vh 15em;
+	// padding: 25vh 15em;
+	padding: 15vh 1em;
 	display: flex;
+	flex-direction: column-reverse;
 	justify-content: space-between;
+	gap: 5em;
 
 	.pageText {
-		width: 45%;
+		// width: 45%;
 
 		h2 {
 			font-family: 'Rufina', serif;
@@ -64,6 +67,54 @@
 		.disclaimer {
 			font-style: italic;
 			font-size: 0.8em;
+		}
+	}
+}
+
+@include md {
+	.pageContent {
+		padding: 25vh 2em;
+
+		.pageText {
+			h2 {
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+@include lg {
+	.pageContent {
+		padding: 25vh 6em;
+		flex-direction: row;
+		gap: 3em;
+
+		.pageText {
+			width: 70%;
+
+			p {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+@include xl {
+	.pageContent {
+		padding: 25vh 10em;
+	}
+}
+
+@include xxl {
+	.pageContent {
+		padding: 25vh 15em;
+
+		.pageText {
+			width: 50%;
+
+			h2 {
+				font-size: 2.25rem;
+			}
 		}
 	}
 }

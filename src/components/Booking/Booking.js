@@ -29,7 +29,7 @@ function Booking() {
 				/>
 			</div>
 
-			<div className={styles.bookingCards}>
+			<div className={styles.bookingCardsLeft}>
 				<Image
 					src='/booking-private.jpg'
 					width={600}

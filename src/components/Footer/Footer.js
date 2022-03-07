@@ -10,7 +10,7 @@ function Footer() {
 
 			<div className={styles.sections}>
 				<div>
-					<p>Our Story</p>
+					<p>About</p>
 					<ul>
 						<li>Our Chefs</li>
 						<li>Careers</li>
@@ -34,7 +34,7 @@ function Footer() {
 					</ul>
 				</div>
 				<div>
-					<p>Contact Us</p>
+					<p>Contact</p>
 					<ul>
 						<li>Email Us</li>
 						<li>FAQ</li>

@@ -8,14 +8,45 @@
 		margin-bottom: 7em;
 	}
 
-	.bookingCards {
+	.bookingCards,
+	.bookingCardsLeft {
 		display: flex;
+		flex-direction: column-reverse;
 		align-items: center;
 		justify-content: space-between;
 		margin: 8em 0;
 
 		.bookingDesc {
-			width: 40%;
+			width: 100%;
+		}
+	}
+
+	.bookingCardsLeft {
+		flex-direction: column;
+	}
+}
+
+@include lg {
+	.container {
+		.bookingCards,
+		.bookingCardsLeft {
+			flex-direction: row;
+			gap: 3em;
+
+			.bookingDesc {
+				width: 70%;
+			}
+		}
+	}
+}
+
+@include xl {
+	.container {
+		.bookingCards,
+		.bookingCardsLeft {
+			.bookingDesc {
+				width: 40%;
+			}
 		}
 	}
 }

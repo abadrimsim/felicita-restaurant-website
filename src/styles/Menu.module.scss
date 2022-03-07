@@ -1,7 +1,7 @@
 @import 'index';
 
 .pageContent {
-	padding: 25vh 15em;
+	padding: 15vh 1em;
 	justify-content: space-between;
 
 	h2 {
@@ -20,6 +20,7 @@
 	.topContainer,
 	.bottomContainer {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 
 		h4,
@@ -47,11 +48,76 @@
 		.topRContainer,
 		.bottomLContainer,
 		.bottomRContainer {
-			width: 40%;
 			margin-bottom: 5em;
 
 			.containerTitle {
 				margin-bottom: 3em;
+			}
+		}
+	}
+}
+
+@include md {
+	.pageContent {
+		padding: 25vh 2em;
+
+		h2 {
+			font-size: 2rem;
+		}
+	}
+}
+
+@include lg {
+	.pageContent {
+		padding: 25vh 6em;
+
+		.topContainer,
+		.bottomContainer {
+			flex-direction: row;
+			gap: 3em;
+
+			p {
+				font-size: 1rem;
+			}
+
+			.topLContainer,
+			.topRContainer,
+			.bottomLContainer,
+			.bottomRContainer {
+				width: 50%;
+			}
+		}
+	}
+}
+
+@include xl {
+	.pageContent {
+		padding: 25vh 10em;
+
+		.topContainer,
+		.bottomContainer {
+			gap: 5em;
+		}
+	}
+}
+
+@include xxl {
+	.pageContent {
+		padding: 25vh 15em;
+
+		h2 {
+			font-size: 2.25rem;
+		}
+
+		.topContainer,
+		.bottomContainer {
+			gap: 0;
+
+			.topLContainer,
+			.topRContainer,
+			.bottomLContainer,
+			.bottomRContainer {
+				width: 40%;
 			}
 		}
 	}

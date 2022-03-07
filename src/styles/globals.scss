@@ -45,6 +45,14 @@ body {
 	color: $tertiary !important;
 }
 
+.navbar-toggler {
+	border: none;
+
+	&:focus {
+		box-shadow: none;
+	}
+}
+
 .dropdown-menu {
 	background-color: $primary;
 

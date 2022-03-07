@@ -12,6 +12,7 @@
 	background-blend-mode: multiply;
 	background-attachment: fixed;
 	color: $tertiary;
+	padding: 1em;
 
 	h2 {
 		font-family: 'Rufina', serif;
@@ -21,6 +22,5 @@
 
 	p {
 		color: $primary-light;
-		width: 20%;
 	}
 }
