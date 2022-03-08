@@ -17,6 +17,9 @@ function Story() {
 					height={400}
 					objectFit='contain'
 					alt='Our Story Image'
+					priority
+					placeholder='blur'
+					blurDataURL='/blur/story.jpg'
 				/>
 
 				<div className={styles.textContainer}>

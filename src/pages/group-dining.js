@@ -74,6 +74,8 @@ function GroupDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-group-1.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -83,6 +85,8 @@ function GroupDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-group-2.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -92,6 +96,8 @@ function GroupDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-group-3.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -101,6 +107,8 @@ function GroupDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-group-4.jpg'
 							/>
 						</div>
 
@@ -112,6 +120,8 @@ function GroupDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-group-5.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -121,6 +131,8 @@ function GroupDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-group-6.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -130,6 +142,8 @@ function GroupDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-group-7.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -139,6 +153,8 @@ function GroupDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-group-8.jpg'
 							/>
 						</div>
 					</div>

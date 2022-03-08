@@ -89,6 +89,8 @@ function ExclusiveEvents() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-exclusive-1.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -98,6 +100,8 @@ function ExclusiveEvents() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-exclusive-2.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -107,6 +111,8 @@ function ExclusiveEvents() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-exclusive-3.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -116,6 +122,8 @@ function ExclusiveEvents() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-exclusive-4.jpg'
 							/>
 						</div>
 
@@ -127,6 +135,8 @@ function ExclusiveEvents() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-exclusive-5.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -136,6 +146,8 @@ function ExclusiveEvents() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-exclusive-6.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -145,6 +157,8 @@ function ExclusiveEvents() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-exclusive-7.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -154,6 +168,8 @@ function ExclusiveEvents() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-exclusive-8.jpg'
 							/>
 						</div>
 					</div>

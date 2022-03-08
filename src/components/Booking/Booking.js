@@ -26,6 +26,8 @@ function Booking() {
 					height={500}
 					objectFit='contain'
 					alt='Group Bookings at Felicita'
+					placeholder='blur'
+					blurDataURL='/blur/booking-group.jpg'
 				/>
 			</div>
 
@@ -36,6 +38,8 @@ function Booking() {
 					height={500}
 					objectFit='contain'
 					alt='Private Dining Experience'
+					placeholder='blur'
+					blurDataURL='/blur/booking-private.jpg'
 				/>
 				<div className={styles.bookingDesc}>
 					<h3>Private Dining Experience</h3>
@@ -67,6 +71,8 @@ function Booking() {
 					height={500}
 					objectFit='contain'
 					alt='Group Bookings at Felicita'
+					placeholder='blur'
+					blurDataURL='/blur/booking-exclusive.jpg'
 				/>
 			</div>
 		</div>

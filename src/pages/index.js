@@ -1,4 +1,5 @@
 import Head from 'next/head';
+
 import Banner from '../components/Banner/Banner';
 import Booking from '../components/Booking/Booking';
 import Carousel from '../components/Carousel/Carousel';

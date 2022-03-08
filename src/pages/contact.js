@@ -16,6 +16,8 @@ function Contact() {
 					height={900}
 					objectFit='contain'
 					alt='Our Story Page Main Image'
+					placeholder='blur'
+					blurDataURL='/blur/contact-us.jpg'
 				/>
 
 				<div className={styles.pageText}>

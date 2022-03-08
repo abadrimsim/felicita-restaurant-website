@@ -87,6 +87,8 @@ function PrivateDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-private-1.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -96,6 +98,8 @@ function PrivateDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-private-2.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -105,6 +109,8 @@ function PrivateDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-private-3.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -114,6 +120,8 @@ function PrivateDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-private-4.jpg'
 							/>
 						</div>
 
@@ -125,6 +133,8 @@ function PrivateDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-private-5.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -134,6 +144,8 @@ function PrivateDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-private-6.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -143,6 +155,8 @@ function PrivateDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-private-7.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
@@ -152,6 +166,8 @@ function PrivateDining() {
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
+								placeholder='blur'
+								blurDataURL='/blur/gallery-private-8.jpg'
 							/>
 						</div>
 					</div>

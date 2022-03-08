@@ -43,6 +43,8 @@ export default function OurStory() {
 					height={900}
 					objectFit='contain'
 					alt='Our Story Page Main Image'
+					placeholder='blur'
+					blurDataURL='/blur/story-page.jpg'
 				/>
 			</div>
 			<Footer />

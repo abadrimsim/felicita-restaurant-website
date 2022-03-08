@@ -48,7 +48,9 @@ function Carousel() {
 							width={600}
 							height={950}
 							objectFit='contain'
-							alt='Customer Testimonial A'
+							alt='Arnold Samuels Testimonial'
+							placeholder='blur'
+							blurDataURL='/blur/testimonial-a.jpg'
 						/>
 					</div>
 				</div>
@@ -71,7 +73,9 @@ function Carousel() {
 							width={600}
 							height={950}
 							objectFit='contain'
-							alt='Customer Testimonial A'
+							alt='Samantha Hobbs Testimonial'
+							placeholder='blur'
+							blurDataURL='/blur/testimonial-b.jpg'
 						/>
 					</div>
 				</div>
@@ -94,7 +98,9 @@ function Carousel() {
 							width={600}
 							height={950}
 							objectFit='contain'
-							alt='Customer Testimonial A'
+							alt='Cathy Smith Testimonial'
+							placeholder='blur'
+							blurDataURL='/blur/testimonial-c.jpg'
 						/>
 					</div>
 				</div>
