@@ -39,6 +39,7 @@ body {
 	}
 }
 
+// React-Bootstrap Navbar
 .nav-link {
 	font-size: 0.9rem;
 	font-weight: 600;
@@ -66,6 +67,25 @@ body {
 			background-color: $primary;
 		}
 	}
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+	width: 13px;
+}
+
+::-webkit-scrollbar-track {
+	background: $tertiary-med;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $primary-light;
+	border-radius: 8px;
+	border: 2px solid $tertiary-med;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }
 
 @include lg {
