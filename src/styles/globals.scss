@@ -79,13 +79,13 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: $primary-light;
+	background: #b18b4f;
 	border-radius: 8px;
 	border: 2px solid $tertiary-med;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #555;
+	background: #95733c;
 }
 
 @include lg {

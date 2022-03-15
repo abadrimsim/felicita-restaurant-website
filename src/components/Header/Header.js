@@ -1,13 +1,39 @@
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { useRef, useEffect } from 'react';
+import Link from 'next/link';
+import { gsap, Power4 } from 'gsap';
+
 import Navigation from '../Navigation/Navigation';
 import styles from './Header.module.scss';
-import Link from 'next/link';
 
 function Header() {
+	// Access children
+	let anim = useRef(null);
+	let content = useRef(null);
+
+	let tl = gsap.timeline({ delay: 0.5 });
+
+	// GSAP animation
+	useEffect(() => {
+		// Header is hidden until every DOM element is loaded
+		tl.to(anim, { duration: 0, css: { visibility: 'visible' } });
+
+		// Text Animation
+		tl.from(content.children, {
+			y: 100,
+			opacity: 0,
+			duration: 1.2,
+			ease: Power4.easeOut,
+			stagger: 0.2,
+		});
+	}, [tl]);
+
 	return (
-		<div className={styles.header}>
+		<div className={styles.header} ref={(e) => (anim = e)}>
+			{/* Add Navigation bar */}
 			<Navigation />
-			<div className={styles.textContainer}>
+
+			{/* Hero text content */}
+			<div className={styles.textContainer} ref={(e) => (content = e)}>
 				<h1 className={styles.title}>It’s time to have a taste of Felicità</h1>
 				<p className={styles.subtitle}>
 					Serious food in a chilled-out setting, without pretence or the

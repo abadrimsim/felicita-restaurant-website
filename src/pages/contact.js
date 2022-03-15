@@ -1,7 +1,11 @@
 import Image from 'next/image';
+
+// Import components
 import Footer from '../components/Footer/Footer';
 import Navigation from '../components/Navigation/Navigation';
 import PageBanner from '../components/PageBanner/PageBanner';
+
+// Import SASS file
 import styles from '../styles/Contact.module.scss';
 
 function Contact() {

@@ -1,6 +1,7 @@
 @import '../../styles/index';
 
 .header {
+	visibility: hidden;
 	background-color: $primary;
 	background-image: url('/header.jpg');
 	background-size: cover;

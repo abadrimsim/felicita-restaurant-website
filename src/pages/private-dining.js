@@ -1,11 +1,16 @@
 import Image from 'next/image';
+import { SRLWrapper } from 'simple-react-lightbox';
+
+// Import components
 import Footer from '../components/Footer/Footer';
 import Navigation from '../components/Navigation/Navigation';
 import PageBanner from '../components/PageBanner/PageBanner';
+
+// Import SASS file
 import styles from '../styles/Events.module.scss';
-import { SRLWrapper } from 'simple-react-lightbox';
 
 function PrivateDining() {
+	// Lightbox Styling
 	const options = {
 		buttons: {
 			backgroundColor: 'rgba(17, 17, 17, 0)',

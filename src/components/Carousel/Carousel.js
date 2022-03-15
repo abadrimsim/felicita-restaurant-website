@@ -1,7 +1,14 @@
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import styles from './Carousel.module.scss';
+
 import Slider from 'react-slick';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+
+import styles from './Carousel.module.scss';
+
+// Import GSAP
+import { gsap, Power4 } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 
 function Carousel() {
 	// Create custom arrows for react-slick
@@ -17,6 +24,7 @@ function Carousel() {
 		</div>
 	);
 
+	// Slider config
 	const settings = {
 		infinite: true,
 		speed: 500,
@@ -26,9 +34,32 @@ function Carousel() {
 		nextArrow: <NextArrow />,
 	};
 
+	// Refs
+	let section = useRef(null);
+
+	gsap.registerPlugin(ScrollTrigger);
+	let tl = gsap.timeline({ delay: 0.3 });
+
+	// GSAP animation
+	useEffect(() => {
+		// Section Animation
+		tl.from(section.children, {
+			scrollTrigger: {
+				trigger: section.children,
+				start: 'top center',
+				end: '+=300', // end after scrolling 300px beyond the start
+				scrub: 1,
+			},
+			y: 100,
+			opacity: 0,
+			duration: 1.5,
+			stagger: 0.5,
+		});
+	}, [tl]);
+
 	return (
 		// Container for testimonial slider
-		<div className={styles.container}>
+		<div className={styles.container} ref={(e) => (section = e)}>
 			<Slider {...settings} className={styles.carouselContainer}>
 				<div className={styles.content}>
 					<div className={styles.testimonial}>
