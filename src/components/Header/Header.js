@@ -15,20 +15,20 @@ function Header() {
 	// GSAP animation
 	useEffect(() => {
 		// Header is hidden until every DOM element is loaded
-		tl.to(anim, { duration: 0, css: { visibility: 'visible' } });
+		tl.to(anim, { duration: 0.1, css: { visibility: 'visible' } });
 
 		// Text Animation
 		tl.from(content.children, {
-			y: 100,
+			y: 60,
 			opacity: 0,
 			duration: 1.2,
 			ease: Power4.easeOut,
-			stagger: 0.2,
+			stagger: 0.15,
 		});
 	}, [tl]);
 
 	return (
-		<div className={styles.header} ref={(e) => (anim = e)}>
+		<div className={styles.header}>
 			{/* Add Navigation bar */}
 			<Navigation />
 
@@ -40,7 +40,9 @@ function Header() {
 					price-tag, offering guilt-free Italian dining.
 				</p>
 				<Link href='/contact' passHref>
-					<button className={styles.btnTan}>Book Now</button>
+					<button className={styles.btnTan} ref={(e) => (anim = e)}>
+						Book Now
+					</button>
 				</Link>
 			</div>
 		</div>

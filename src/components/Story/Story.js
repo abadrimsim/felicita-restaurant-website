@@ -15,7 +15,7 @@ function Story() {
 	let sectionContent = useRef(null);
 
 	gsap.registerPlugin(ScrollTrigger);
-	let tl = gsap.timeline({ delay: 0.3 });
+	let tl = gsap.timeline();
 
 	// GSAP animation
 	useEffect(() => {

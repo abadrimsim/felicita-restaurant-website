@@ -1,7 +1,6 @@
 @import '../../styles/index';
 
 .header {
-	visibility: hidden;
 	background-color: $primary;
 	background-image: url('/header.jpg');
 	background-size: cover;
@@ -24,6 +23,10 @@
 		.subtitle {
 			color: $primary-light;
 			margin: 1em 0 2.5em;
+		}
+
+		.btnTan {
+			visibility: hidden;
 		}
 	}
 }
