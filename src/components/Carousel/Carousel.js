@@ -7,7 +7,7 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import styles from './Carousel.module.scss';
 
 // Import GSAP
-import { gsap, Power4 } from 'gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 
 function Carousel() {
@@ -70,8 +70,8 @@ function Carousel() {
 		tl.from(section.children, {
 			scrollTrigger: {
 				trigger: section.children,
-				start: 'top center',
-				end: '+=300', // end after scrolling 300px beyond the start
+				start: 'top 80%',
+				end: '+=500',
 				scrub: 1,
 			},
 			y: 100,

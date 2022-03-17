@@ -3,10 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // Import GSAP
-import { gsap, Power4 } from 'gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 
 // Import SASS file
+
 import styles from './Story.module.scss';
 
 function Story() {
@@ -23,19 +24,14 @@ function Story() {
 		tl.from(section.children, {
 			scrollTrigger: {
 				trigger: section.children,
-				start: 'top center',
-				end: '+=300', // end after scrolling 300px beyond the start
+				start: 'top bottom',
+				pinSpacing: false,
+				end: '+=500', // end after scrolling 500px beyond the start
 				scrub: 1,
 			},
 			y: 100,
 			opacity: 0,
 			duration: 1.5,
-			stagger: 0.5,
-		}).from(sectionContent.children, {
-			y: 100,
-			opacity: 0,
-			duration: 1.2,
-			ease: Power4.easeOut,
 			stagger: 0.5,
 		});
 	}, [tl]);

@@ -33,12 +33,13 @@ function Booking() {
 
 	// Refs
 	let section = useRef(null);
+	let groupSec = useRef(null);
 	let privateSec = useRef(null);
 	let exclusiveSec = useRef(null);
 
 	// GSAP animation
 	gsap.registerPlugin(ScrollTrigger);
-	let tl = gsap.timeline();
+	let tl = gsap.timeline({ delay: 0.2 });
 
 	useEffect(() => {
 		const animObj = {
@@ -53,8 +54,8 @@ function Booking() {
 			{
 				scrollTrigger: {
 					trigger: section.children,
-					start: '-30% center',
-					end: '+=300', // end after scrolling 300px beyond the start
+					start: 'top bottom',
+					end: '+=500', // end after scrolling 300px beyond the start
 					scrub: 1,
 				},
 				y: 100,
@@ -64,11 +65,20 @@ function Booking() {
 			},
 			0.2
 		)
+			.from(groupSec.children, {
+				scrollTrigger: {
+					trigger: groupSec.children,
+					start: 'top bottom',
+					end: '+=200',
+					scrub: 1,
+				},
+				...animObj,
+			})
 			.from(privateSec.children, {
 				scrollTrigger: {
 					trigger: privateSec.children,
-					start: '-50% center',
-					end: '+=100',
+					start: 'top bottom',
+					end: '+=200',
 					scrub: 1,
 				},
 				...animObj,
@@ -76,8 +86,8 @@ function Booking() {
 			.from(exclusiveSec.children, {
 				scrollTrigger: {
 					trigger: exclusiveSec.children,
-					start: '-50% center',
-					end: '+=100',
+					start: 'top bottom',
+					end: '+=200',
 					scrub: 1,
 				},
 				...animObj,
@@ -90,7 +100,7 @@ function Booking() {
 				<h2>Looking for a place for your upcoming event?</h2>
 				<hr className={styles.divider} />
 			</div>
-			<div className={styles.bookingCards}>
+			<div className={styles.bookingCards} ref={(e) => (groupSec = e)}>
 				<div className={styles.bookingDesc}>
 					<h3>{bookEvents[0].title}</h3>
 					<p>{bookEvents[0].desc}</p>
@@ -129,6 +139,7 @@ function Booking() {
 					<h3>{bookEvents[2].title}</h3>
 					<p>{bookEvents[2].desc}</p>
 				</div>
+
 				<Image
 					src={bookEvents[2].imgUrl}
 					width={600}

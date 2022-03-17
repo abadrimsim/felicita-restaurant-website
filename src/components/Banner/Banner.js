@@ -22,7 +22,7 @@ function Banner() {
 		tl.from(section.children, {
 			scrollTrigger: {
 				trigger: section.children,
-				start: 'top center',
+				start: 'top bottom',
 				end: '+=100', // end after scrolling 300px beyond the start
 				scrub: 1,
 			},

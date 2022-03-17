@@ -18,6 +18,10 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
+body {
+	overflow: overlay;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -71,21 +75,20 @@ body {
 
 // Custom Scrollbar
 ::-webkit-scrollbar {
-	width: 13px;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-	background: $tertiary-med;
+	background: rgba(196, 195, 195, 0.5);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #b18b4f;
-	border-radius: 8px;
-	border: 2px solid $tertiary-med;
+	background: $secondary-light;
+	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #95733c;
+	background: $secondary;
 }
 
 @include lg {

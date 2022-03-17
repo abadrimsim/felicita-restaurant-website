@@ -60,19 +60,21 @@
 
 @include xl {
 	.header {
+		min-height: 100vh;
+
 		.textContainer {
-			padding: 10em 0 10em 10em;
+			padding: 15em 0 10em 10em;
 		}
 	}
 }
 
 @include xxl {
 	.header {
-		height: 55em;
+		// height: 55em;
 
 		.textContainer {
 			width: 40%;
-			padding: 15em 0 10em 15em;
+			padding: 18em 0 10em 15em;
 		}
 	}
 }
