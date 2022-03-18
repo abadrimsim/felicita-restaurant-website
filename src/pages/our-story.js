@@ -1,19 +1,40 @@
 import Image from 'next/image';
+import { useRef, useEffect } from 'react';
 
 // Import components
 import Footer from '../components/Footer/Footer';
 import Navigation from '../components/Navigation/Navigation';
 import PageBanner from '../components/PageBanner/PageBanner';
 
+// Import GSAP
+import { gsap, Power4 } from 'gsap';
+
 // Import SASS file
 import styles from '../styles/OurStory.module.scss';
 
 export default function OurStory() {
+	// Refs
+	let section = useRef(null);
+
+	let tl = gsap.timeline({ delay: 0.3 });
+
+	// GSAP animation
+	useEffect(() => {
+		// Section Animation
+		tl.from(section, {
+			y: 100,
+			opacity: 0,
+			duration: 1.5,
+			ease: Power4.easeOut,
+			stagger: 0.5,
+		});
+	}, [tl]);
+
 	return (
 		<div>
 			<Navigation />
 			<PageBanner />
-			<div className={styles.pageContent}>
+			<div className={styles.pageContent} ref={(e) => (section = e)}>
 				<div className={styles.pageText}>
 					<h2>Our Story</h2>
 					<hr className={styles.divider} />
@@ -49,6 +70,7 @@ export default function OurStory() {
 					alt='Our Story Page Main Image'
 					placeholder='blur'
 					blurDataURL='/blur/story-page.jpg'
+					className={styles.storyImg}
 				/>
 			</div>
 			<Footer />

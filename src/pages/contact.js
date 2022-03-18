@@ -1,19 +1,39 @@
 import Image from 'next/image';
+import { useRef, useEffect } from 'react';
 
 // Import components
 import Footer from '../components/Footer/Footer';
 import Navigation from '../components/Navigation/Navigation';
 import PageBanner from '../components/PageBanner/PageBanner';
 
+// Import GSAP
+import { gsap, Power4 } from 'gsap';
+
 // Import SASS file
 import styles from '../styles/Contact.module.scss';
 
 function Contact() {
+	// Refs
+	let section = useRef(null);
+
+	let tl = gsap.timeline({ delay: 0.3 });
+
+	// GSAP animation
+	useEffect(() => {
+		// Section Animation
+		tl.from(section, {
+			y: 100,
+			opacity: 0,
+			duration: 1.5,
+			ease: Power4.easeOut,
+		});
+	}, [tl]);
+
 	return (
 		<div>
 			<Navigation />
 			<PageBanner />
-			<div className={styles.pageContent}>
+			<div className={styles.pageContent} ref={(e) => (section = e)}>
 				<Image
 					src='/contact-us.jpg'
 					width={600}
@@ -22,6 +42,7 @@ function Contact() {
 					alt='Our Story Page Main Image'
 					placeholder='blur'
 					blurDataURL='/blur/contact-us.jpg'
+					className={styles.contactImg}
 				/>
 
 				<div className={styles.pageText}>

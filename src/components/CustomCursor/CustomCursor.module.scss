@@ -1,0 +1,28 @@
+@import '../../styles/index';
+
+.customCursor {
+	position: fixed;
+	width: 37px;
+	height: 37px;
+	border: 1px solid #97979757;
+	border-radius: 50%;
+	z-index: 10;
+	overflow: hidden;
+	transform: translate3d(0, 0, 0);
+	transition: 0.15s;
+	cursor: auto;
+	pointer-events: none;
+}
+
+.cursorInner {
+	position: fixed;
+	width: 4px;
+	height: 4px;
+	background: $secondary-light;
+	border-radius: 50%;
+	z-index: 10;
+	overflow: hidden;
+	transform: translate3d(0, 0, 0);
+	transition: 0.18s;
+	pointer-events: none;
+}

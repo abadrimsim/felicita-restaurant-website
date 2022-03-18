@@ -1,10 +1,15 @@
 import Image from 'next/image';
+import { useRef, useEffect } from 'react';
 import { SRLWrapper } from 'simple-react-lightbox';
 
 // Import components
 import Footer from '../components/Footer/Footer';
 import Navigation from '../components/Navigation/Navigation';
 import PageBanner from '../components/PageBanner/PageBanner';
+
+// Import GSAP
+import { gsap, Power4 } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 
 // Import SASS file
 import styles from '../styles/Events.module.scss';
@@ -26,12 +31,52 @@ function ExclusiveEvents() {
 		},
 	};
 
+	// Refs
+	let section = useRef(null);
+	let gallery = useRef(null);
+
+	gsap.registerPlugin(ScrollTrigger);
+	let tl = gsap.timeline({ delay: 0.2 });
+
+	// GSAP animation
+	useEffect(() => {
+		// Section Animation
+		tl.from(
+			section,
+			{
+				y: 100,
+				opacity: 0,
+				duration: 1.5,
+
+				ease: Power4.easeOut,
+			},
+			0.5
+		)
+		.from(
+			gallery,
+			{
+				scrollTrigger: {
+					trigger: gallery,
+					start: 'top bottom',
+					end: '+=200',
+					scrub: 1,
+				},
+				y: 100,
+				opacity: 0,
+				duration: 1.5,
+				delay: 0.5,
+				ease: Power4.easeOut,
+			},
+			0.5
+		);
+	}, [tl]);
+
 	return (
 		<>
 			<Navigation />
 			<PageBanner />
 
-			<div className={styles.container}>
+			<div className={styles.container} ref={(e) => (section = e)}>
 				{/* Text Container */}
 				<div className={styles.pageText}>
 					<h2>Exclusive Events</h2>
@@ -85,7 +130,7 @@ function ExclusiveEvents() {
 
 				{/* Image Gallery */}
 				<SRLWrapper options={options}>
-					<div className={styles.imgGallery}>
+					<div className={styles.imgGallery} ref={(e) => (gallery = e)}>
 						{/* Top Row */}
 						<div className={styles.imgThumbnail}>
 							<Image

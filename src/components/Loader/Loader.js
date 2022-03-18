@@ -3,7 +3,7 @@ import styles from './Loader.module.scss';
 function Loader() {
 	return (
 		<div className={styles.loader}>
-			<h1>Felicità Ristorante</h1>
+			<h3>Patience is the secret to good food.</h3>
 		</div>
 	);
 }

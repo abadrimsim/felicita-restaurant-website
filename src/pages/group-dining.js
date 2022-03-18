@@ -1,10 +1,15 @@
 import Image from 'next/image';
+import { useRef, useEffect } from 'react';
 import { SRLWrapper } from 'simple-react-lightbox';
 
 // Import components
 import Footer from '../components/Footer/Footer';
 import Navigation from '../components/Navigation/Navigation';
 import PageBanner from '../components/PageBanner/PageBanner';
+
+// Import GSAP
+import { gsap, Power4 } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 
 // Import SASS file
 import styles from '../styles/Events.module.scss';
@@ -26,12 +31,88 @@ function GroupDining() {
 		},
 	};
 
+	// Refs
+	let section = useRef(null);
+	let sectionInside = useRef(null);
+	let sectionOutside = useRef(null);
+	let gallery = useRef(null);
+
+	gsap.registerPlugin(ScrollTrigger);
+	let tl = gsap.timeline({ delay: 0.2 });
+
+	// GSAP animation
+	useEffect(() => {
+		// Section Animation
+		tl.from(
+			section,
+			{
+				y: 100,
+				opacity: 0,
+				duration: 1.5,
+
+				ease: Power4.easeOut,
+			},
+			0.5
+		)
+			.from(
+				sectionInside,
+				{
+					scrollTrigger: {
+						trigger: sectionInside,
+						start: 'top bottom',
+						end: '+=200',
+						scrub: 1,
+					},
+					y: 100,
+					opacity: 0,
+					duration: 1.5,
+					delay: 0.5,
+					ease: Power4.easeOut,
+				},
+				0.5
+			)
+			.from(
+				sectionOutside,
+				{
+					scrollTrigger: {
+						trigger: sectionOutside,
+						start: 'top bottom',
+						end: '+=200',
+						scrub: 1,
+					},
+					y: 100,
+					opacity: 0,
+					duration: 1.5,
+					delay: 0.5,
+					ease: Power4.easeOut,
+				},
+				0.5
+			)
+			.from(
+				gallery,
+				{
+					scrollTrigger: {
+						trigger: gallery,
+						start: 'top bottom',
+						end: '+=200',
+						scrub: 1,
+					},
+					y: 100,
+					opacity: 0,
+					duration: 1.5,
+					delay: 0.5,
+					ease: Power4.easeOut,
+				},
+				0.5
+			);
+	}, [tl]);
+
 	return (
 		<>
 			<Navigation />
 			<PageBanner />
 
-			<div className={styles.container}>
+			<div className={styles.container} ref={(e) => (section = e)}>
 				{/* Text Container */}
 				<div className={styles.pageText}>
 					<h2>Group Dining</h2>
@@ -47,14 +128,14 @@ function GroupDining() {
 							area. All dietary requirements can be catered for.
 						</p>
 					</div>
-					<div>
+					<div ref={(e) => (sectionInside = e)}>
 						<h3>Inside Dining - Window Tables</h3>
 						<p>
 							Tables are allocated by date of reservation. Your request will be
 							noted, howver is not guaranteed.
 						</p>
 					</div>
-					<div>
+					<div ref={(e) => (sectionOutside = e)}>
 						<h3>Outside Dining</h3>
 						<p>
 							The outdoor terrace is covered by a heavy awning for protection,
@@ -70,7 +151,7 @@ function GroupDining() {
 
 				{/* Image Gallery */}
 				<SRLWrapper options={options}>
-					<div className={styles.imgGallery}>
+					<div className={styles.imgGallery} ref={(e) => (gallery = e)}>
 						{/* Top Row */}
 						<div className={styles.imgThumbnail}>
 							<Image

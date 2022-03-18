@@ -31,20 +31,20 @@
 	height: 100vh;
 	background-color: $primary;
 
-	h1 {
-		color: $secondary;
+	h3 {
+		color: $secondary-light;
 		position: relative;
-		font-size: 1.5em;
-		font-family: 'Rufina', serif;
+		font-size: 1em;
+		font-family: 'Raleway', sans-serif;
 		font-weight: bold;
 		padding: 5em;
-		text-transform: uppercase;
+
 		letter-spacing: 3px;
 		background: linear-gradient(
 			to right,
-			$secondary 0,
+			$secondary-light 0,
 			$tertiary 10%,
-			$secondary 20%
+			$secondary-light 20%
 		);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;

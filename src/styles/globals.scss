@@ -48,6 +48,11 @@ body {
 	font-size: 0.9rem;
 	font-weight: 600;
 	color: $tertiary !important;
+	transition: 1s;
+
+	&:hover {
+		color: $secondary-light !important;
+	}
 }
 
 .navbar-toggler {
@@ -65,6 +70,7 @@ body {
 		color: $tertiary;
 		font-size: 0.9rem;
 		font-weight: 600;
+		transition: 1s;
 
 		&:hover {
 			color: $secondary-light;

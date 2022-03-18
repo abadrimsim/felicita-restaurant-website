@@ -26,6 +26,15 @@
 			color: $primary-light;
 		}
 	}
+
+	.storyImg {
+		transition: all 1.2s ease;
+
+		&:hover {
+			filter: brightness(70%);
+			transform: scale(1.05);
+		}
+	}
 }
 
 @include md {

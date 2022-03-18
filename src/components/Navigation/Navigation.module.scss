@@ -6,6 +6,7 @@
 	background-color: $primary;
 	opacity: 0.8;
 	padding: 0.5em 1em;
+	z-index: 1;
 
 	.brand {
 		font-family: 'Rufina', serif;
@@ -17,6 +18,11 @@
 		color: $tertiary !important;
 		font-size: 0.9rem;
 		font-weight: 600;
+		transition: 1s;
+
+		&:hover {
+			color: $secondary-light !important;
+		}
 	}
 }
 

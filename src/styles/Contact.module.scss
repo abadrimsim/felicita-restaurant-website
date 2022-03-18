@@ -47,7 +47,7 @@
 			textarea {
 				vertical-align: text-top;
 				box-sizing: border-box;
-				border: 1px solid $primary-light;
+				border: 1px solid $primary-lighter;
 				font-size: 0.9rem;
 				padding: 0.35em;
 				width: 60%;
@@ -67,6 +67,15 @@
 		.disclaimer {
 			font-style: italic;
 			font-size: 0.8em;
+		}
+	}
+
+	.contactImg {
+		transition: all 1.2s ease;
+
+		&:hover {
+			filter: brightness(70%);
+			transform: scale(1.05);
 		}
 	}
 }

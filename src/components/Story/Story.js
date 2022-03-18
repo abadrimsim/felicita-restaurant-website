@@ -7,13 +7,11 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 
 // Import SASS file
-
 import styles from './Story.module.scss';
 
 function Story() {
 	// Refs
 	let section = useRef(null);
-	let sectionContent = useRef(null);
 
 	gsap.registerPlugin(ScrollTrigger);
 	let tl = gsap.timeline();
@@ -43,7 +41,7 @@ function Story() {
 				imaginative food.
 			</h2>
 			<hr className={styles.divider} />
-			<div className={styles.medContainer} ref={(e) => (sectionContent = e)}>
+			<div className={styles.medContainer}>
 				<Image
 					src='/story.jpg'
 					width={600}
