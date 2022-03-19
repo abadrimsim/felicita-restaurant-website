@@ -11,7 +11,7 @@ import Story from '../components/Story/Story';
 
 export default function Home() {
 	return (
-		<div>
+		<div data-scroll-section>
 			<Head>
 				<title>Welcome to Felicità Ristorante</title>
 				<meta name='description' content='Come and visit Felicità Ristorante' />

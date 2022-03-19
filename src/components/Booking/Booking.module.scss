@@ -3,7 +3,7 @@
 .container {
 	.divider {
 		color: $secondary-light;
-		opacity: 100%;
+		opacity: 1;
 		width: 15em;
 		margin-bottom: 7em;
 	}
@@ -25,7 +25,7 @@
 
 			&:hover {
 				filter: brightness(70%);
-				transform: translateY(-2%)
+				transform: translateY(-2%);
 			}
 		}
 	}

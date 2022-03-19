@@ -5,34 +5,40 @@ import Link from 'next/link';
 // Import GSAP
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
 
 // Import SASS file
 import styles from './Story.module.scss';
 
 function Story() {
+	// const { scroll } = useLocomotiveScroll();
+	//  console.log(scroll);
+
+	// scroll.on('scroll', ScrollTrigger.update);
+
 	// Refs
 	let section = useRef(null);
 
-	gsap.registerPlugin(ScrollTrigger);
-	let tl = gsap.timeline();
+	// gsap.registerPlugin(ScrollTrigger);
+	// let tl = gsap.timeline();
 
 	// GSAP animation
-	useEffect(() => {
-		// Section Animation
-		tl.from(section.children, {
-			scrollTrigger: {
-				trigger: section.children,
-				start: 'top bottom',
-				pinSpacing: false,
-				end: '+=500', // end after scrolling 500px beyond the start
-				scrub: 1,
-			},
-			y: 100,
-			opacity: 0,
-			duration: 1.5,
-			stagger: 0.5,
-		});
-	}, [tl]);
+	// useEffect(() => {
+	// 	// Section Animation
+	// 	tl.from(section.children, {
+	// 		scrollTrigger: {
+	// 			trigger: section.children,
+	// 			start: 'top bottom',
+	// 			pinSpacing: false,
+	// 			end: '+=500', // end after scrolling 500px beyond the start
+	// 			scrub: 1,
+	// 		},
+	// 		y: 100,
+	// 		opacity: 0,
+	// 		duration: 1.5,
+	// 		stagger: 0.5,
+	// 	});
+	// }, [tl]);
 
 	return (
 		<div className={styles.container} ref={(e) => (section = e)}>
@@ -40,7 +46,12 @@ function Story() {
 				A place where you’ll find well-cooked, honest, uncomplicated but
 				imaginative food.
 			</h2>
-			<hr className={styles.divider} />
+			<hr
+				className={styles.divider}
+				data-scroll
+				data-scroll-speed='-2'
+				data-scroll-direction='horizontal'
+			/>
 			<div className={styles.medContainer}>
 				<Image
 					src='/story.jpg'
@@ -52,6 +63,8 @@ function Story() {
 					placeholder='blur'
 					blurDataURL='/blur/story.jpg'
 					className={styles.storyImg}
+					data-scroll
+					data-scroll-speed='2'
 				/>
 
 				<div className={styles.textContainer}>

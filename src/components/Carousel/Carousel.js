@@ -61,25 +61,25 @@ function Carousel() {
 	// Refs
 	let section = useRef(null);
 
-	gsap.registerPlugin(ScrollTrigger);
-	let tl = gsap.timeline();
+	// gsap.registerPlugin(ScrollTrigger);
+	// let tl = gsap.timeline();
 
-	// GSAP animation
-	useEffect(() => {
-		// Section Animation
-		tl.from(section.children, {
-			scrollTrigger: {
-				trigger: section.children,
-				start: 'top 80%',
-				end: '+=500',
-				scrub: 1,
-			},
-			y: 100,
-			opacity: 0,
-			duration: 1.5,
-			stagger: 0.5,
-		});
-	}, [tl]);
+	// // GSAP animation
+	// useEffect(() => {
+	// 	// Section Animation
+	// 	tl.from(section.children, {
+	// 		scrollTrigger: {
+	// 			trigger: section.children,
+	// 			start: 'top 80%',
+	// 			end: '+=500',
+	// 			scrub: 1,
+	// 		},
+	// 		y: 100,
+	// 		opacity: 0,
+	// 		duration: 1.5,
+	// 		stagger: 0.5,
+	// 	});
+	// }, [tl]);
 
 	return (
 		// Container for testimonial slider
@@ -91,7 +91,11 @@ function Carousel() {
 						<div className={styles.testimonial}>
 							<h2 className={styles.mainHeader}>{quote}</h2>
 
-							<span>
+							<span
+								data-scroll
+								data-scroll-speed='2'
+								data-scroll-direction='horizontal'
+							>
 								<hr />
 								<p>{name}</p>
 							</span>
@@ -105,6 +109,8 @@ function Carousel() {
 								alt={name}
 								placeholder='blur'
 								blurDataURL={blurUrl}
+								data-scroll
+								data-scroll-speed='2'
 							/>
 						</div>
 					</div>

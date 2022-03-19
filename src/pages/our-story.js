@@ -16,28 +16,33 @@ export default function OurStory() {
 	// Refs
 	let section = useRef(null);
 
-	let tl = gsap.timeline({ delay: 0.3 });
+	// let tl = gsap.timeline({ delay: 0.3 });
 
-	// GSAP animation
-	useEffect(() => {
-		// Section Animation
-		tl.from(section, {
-			y: 100,
-			opacity: 0,
-			duration: 1.5,
-			ease: Power4.easeOut,
-			stagger: 0.5,
-		});
-	}, [tl]);
+	// // GSAP animation
+	// useEffect(() => {
+	// 	// Section Animation
+	// 	tl.from(section, {
+	// 		y: 100,
+	// 		opacity: 0,
+	// 		duration: 1.5,
+	// 		ease: Power4.easeOut,
+	// 		stagger: 0.5,
+	// 	});
+	// }, [tl]);
 
 	return (
-		<div>
+		<div data-scroll-section>
 			<Navigation />
 			<PageBanner />
 			<div className={styles.pageContent} ref={(e) => (section = e)}>
 				<div className={styles.pageText}>
 					<h2>Our Story</h2>
-					<hr className={styles.divider} />
+					<hr
+						className={styles.divider}
+						data-scroll
+						data-scroll-speed='-2'
+						data-scroll-direction='horizontal'
+					/>
 					<p>
 						Serious food in a chilled-out setting, without pretence or the
 						price-tag, offering guilt-free Italian dining since 2006.
@@ -71,6 +76,8 @@ export default function OurStory() {
 					placeholder='blur'
 					blurDataURL='/blur/story-page.jpg'
 					className={styles.storyImg}
+					data-scroll
+					data-scroll-speed='1'
 				/>
 			</div>
 			<Footer />

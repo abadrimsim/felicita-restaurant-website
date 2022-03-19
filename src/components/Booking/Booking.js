@@ -38,67 +38,72 @@ function Booking() {
 	let exclusiveSec = useRef(null);
 
 	// GSAP animation
-	gsap.registerPlugin(ScrollTrigger);
-	let tl = gsap.timeline({ delay: 0.2 });
+	// gsap.registerPlugin(ScrollTrigger);
+	// let tl = gsap.timeline({ delay: 0.2 });
 
-	useEffect(() => {
-		const animObj = {
-			y: 50,
-			opacity: 0,
-			duration: 1.5,
-			stagger: 0.5,
-		};
-		// Section Animation
-		tl.from(
-			section.children,
-			{
-				scrollTrigger: {
-					trigger: section.children,
-					start: 'top bottom',
-					end: '+=500', // end after scrolling 300px beyond the start
-					scrub: 1,
-				},
-				y: 100,
-				opacity: 0,
-				duration: 1.5,
-				stagger: 0.8,
-			},
-			0.2
-		)
-			.from(groupSec.children, {
-				scrollTrigger: {
-					trigger: groupSec.children,
-					start: 'top bottom',
-					end: '+=200',
-					scrub: 1,
-				},
-				...animObj,
-			})
-			.from(privateSec.children, {
-				scrollTrigger: {
-					trigger: privateSec.children,
-					start: 'top bottom',
-					end: '+=200',
-					scrub: 1,
-				},
-				...animObj,
-			})
-			.from(exclusiveSec.children, {
-				scrollTrigger: {
-					trigger: exclusiveSec.children,
-					start: 'top bottom',
-					end: '+=200',
-					scrub: 1,
-				},
-				...animObj,
-			});
-	}, [tl]);
+	// useEffect(() => {
+	// 	const animObj = {
+	// 		y: 50,
+	// 		opacity: 0,
+	// 		duration: 1.5,
+	// 		stagger: 0.5,
+	// 	};
+	// 	// Section Animation
+	// 	tl.from(
+	// 		section.children,
+	// 		{
+	// 			scrollTrigger: {
+	// 				trigger: section.children,
+	// 				start: 'top bottom',
+	// 				end: '+=500', // end after scrolling 300px beyond the start
+	// 				scrub: 1,
+	// 			},
+	// 			y: 100,
+	// 			opacity: 0,
+	// 			duration: 1.5,
+	// 			stagger: 0.8,
+	// 		},
+	// 		0.2
+	// 	)
+	// 		.from(groupSec.children, {
+	// 			scrollTrigger: {
+	// 				trigger: groupSec.children,
+	// 				start: 'top bottom',
+	// 				end: '+=200',
+	// 				scrub: 1,
+	// 			},
+	// 			...animObj,
+	// 		})
+	// 		.from(privateSec.children, {
+	// 			scrollTrigger: {
+	// 				trigger: privateSec.children,
+	// 				start: 'top bottom',
+	// 				end: '+=200',
+	// 				scrub: 1,
+	// 			},
+	// 			...animObj,
+	// 		})
+	// 		.from(exclusiveSec.children, {
+	// 			scrollTrigger: {
+	// 				trigger: exclusiveSec.children,
+	// 				start: 'top bottom',
+	// 				end: '+=200',
+	// 				scrub: 1,
+	// 			},
+	// 			...animObj,
+	// 		});
+	// }, [tl]);
 
 	return (
 		<div className={styles.container} ref={(e) => (section = e)}>
 			<div className={styles.mainHeader}>
 				<h2>Looking for a place for your upcoming event?</h2>
-				<hr className={styles.divider} />
+				<hr
+					className={styles.divider}
+					data-scroll
+					data-scroll-speed='-2'
+					data-scroll-direction='horizontal'
+				/>
 			</div>
 			<div className={styles.bookingCards} ref={(e) => (groupSec = e)}>
 				<div className={styles.bookingDesc}>
@@ -114,6 +119,8 @@ function Booking() {
 					placeholder='blur'
 					blurDataURL={bookEvents[0].blurUrl}
 					className={styles.bookingImg}
+					data-scroll
+					data-scroll-speed='1'
 				/>
 			</div>
 
@@ -127,6 +134,8 @@ function Booking() {
 					placeholder='blur'
 					blurDataURL={bookEvents[1].blurUrl}
 					className={styles.bookingImg}
+					data-scroll
+					data-scroll-speed='1'
 				/>
 				<div className={styles.bookingDesc}>
 					<h3>{bookEvents[1].title}</h3>
@@ -149,6 +158,8 @@ function Booking() {
 					placeholder='blur'
 					blurDataURL={bookEvents[2].blurUrl}
 					className={styles.bookingImg}
+					data-scroll
+					data-scroll-speed='1'
 				/>
 			</div>
 		</div>

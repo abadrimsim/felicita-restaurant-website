@@ -15,26 +15,31 @@ function Menu() {
 	// Refs
 	let section = useRef(null);
 
-	let tl = gsap.timeline({ delay: 0.3 });
+	// let tl = gsap.timeline({ delay: 0.3 });
 
-	// GSAP animation
-	useEffect(() => {
-		// Section Animation
-		tl.from(section, {
-			y: 100,
-			opacity: 0,
-			duration: 1.5,
-			ease: Power4.easeOut,
-		});
-	}, [tl]);
+	// // GSAP animation
+	// useEffect(() => {
+	// 	// Section Animation
+	// 	tl.from(section, {
+	// 		y: 100,
+	// 		opacity: 0,
+	// 		duration: 1.5,
+	// 		ease: Power4.easeOut,
+	// 	});
+	// }, [tl]);
 
 	return (
-		<div>
+		<div data-scroll-section>
 			<Navigation />
 			<PageBanner />
 			<div className={styles.pageContent} ref={(e) => (section = e)}>
 				<h2>Our Menu</h2>
-				<hr className={styles.divider} />
+				<hr
+					className={styles.divider}
+					data-scroll
+					data-scroll-speed='-2'
+					data-scroll-direction='horizontal'
+				/>
 
 				{/* Top Menu Container */}
 				<div className={styles.topContainer}>
