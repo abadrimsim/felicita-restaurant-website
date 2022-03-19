@@ -1,0 +1,17 @@
+@import 'index';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	h2 {
+		margin-bottom: 0;
+	}
+
+	.btnDark {
+		visibility: hidden;
+	}
+}

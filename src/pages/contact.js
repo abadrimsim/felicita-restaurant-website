@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { useRef, useEffect } from 'react';
 
 // Import components
@@ -13,6 +14,13 @@ import { gsap, Power4 } from 'gsap';
 import styles from '../styles/Contact.module.scss';
 
 function Contact() {
+	const router = useRouter();
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		router.push('/thank-you');
+	};
+
 	// Refs
 	let section = useRef(null);
 
@@ -54,14 +62,14 @@ function Contact() {
 						you as soon as we can!
 					</p>
 
-					<form action=''>
+					<form action='' onSubmit={handleSubmit}>
 						<label htmlFor='name'>Name:</label>
-						<input type='text' id='name' name='name' />
+						<input type='text' id='name' name='name' required />
 						<br />
 						<br />
 
 						<label htmlFor='email'>Email Add.:</label>
-						<input type='text' id='email' name='email' />
+						<input type='email' id='email' name='email' required />
 						<br />
 						<br />
 
@@ -71,12 +79,20 @@ function Contact() {
 						<br />
 
 						<label htmlFor='message'>Your Message:</label>
-						<textarea name='message' id='message' cols='30' rows='5'></textarea>
+						<textarea
+							name='message'
+							id='message'
+							cols='30'
+							rows='5'
+							required
+						></textarea>
 						<br />
 						<br />
 
 						<div className={styles.btnSubmit}>
-							<button className={styles.btnDark}>Send Message</button>
+							<button type='submit' className={styles.btnDark}>
+								Send Message
+							</button>
 						</div>
 					</form>
 
