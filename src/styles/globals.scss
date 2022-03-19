@@ -12,15 +12,9 @@
 // @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Rufina:wght@400;700&display=swap');
 
 // Import font from Fontsource
-@import "~@fontsource/raleway/400.css";
-@import "~@fontsource/rufina/400.css";
+@import "~@fontsource/raleway/index.css";
+@import "~@fontsource/rufina/index.css";
 @import "~@fontsource/rufina/700.css";
-
-@font-face {
-  font-family: 'Vegawanty';
-  src: url('/fonts/Vegawanty.ttf');
- }
-
 
 html,
 body {

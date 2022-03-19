@@ -51,6 +51,7 @@ function Story() {
 					priority
 					placeholder='blur'
 					blurDataURL='/blur/story.jpg'
+					className={styles.storyImg}
 				/>
 
 				<div className={styles.textContainer}>

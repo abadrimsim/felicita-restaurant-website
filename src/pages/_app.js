@@ -1,8 +1,11 @@
-import '../styles/globals.scss';
-import SimpleReactLightbox from 'simple-react-lightbox';
 import { useState, useEffect } from 'react';
+
+import SimpleReactLightbox from 'simple-react-lightbox';
+
 import CustomCursor from '../components/CustomCursor/CustomCursor';
 import Loader from '../components/Loader/Loader';
+
+import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
 	const [loading, setLoading] = useState(false);
