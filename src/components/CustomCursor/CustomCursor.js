@@ -16,22 +16,38 @@ function CustomCursor() {
 			const miniX = clientX - cursorInner.current.clientWidth / 2;
 			const miniY = clientY - cursorInner.current.clientHeight / 2;
 
-			cursor.current.style.visibility = 'visible';
-			cursorInner.current.style.visibility = 'visible';
+			if (
+				'ontouchstart' in window ||
+				(window.DocumentTouch && document instanceof DocumentTouch)
+			) {
+				cursor.current.style.visibility = 'hidden';
+				cursorInner.current.style.visibility = 'hidden';
+			} else {
+				cursor.current.style.visibility = 'visible';
+				cursorInner.current.style.visibility = 'visible';
+			}
 
 			cursor.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 			cursorInner.current.style.transform = `translate3d(${miniX}px, ${miniY}px, 0)`;
 		};
 
+		// const onTouch = () => {
+		// 	cursor.current.style.visibility = 'hidden';
+		// 	cursorInner.current.style.visibility = 'hidden';
+
+		// 	console.log('touch');
+		// };
+
 		window.addEventListener('mousemove', onMouseMove);
 		window.addEventListener('mouseeenter', onMouseMove);
-		// window.addEventListener('touchstart', () => console.log('touch'));
+		// window.addEventListener('touchstart', onTouch);
 
 		// clean up effect when component unmounts
 		return () => {
 			// remove the event listener
 			window.removeEventListener('mousemove', onMouseMove);
 			window.removeEventListener('mouseeenter', onMouseMove);
+			// window.removeEventListener('touchstart', onTouch);
 		};
 	}, []);
 	return (
