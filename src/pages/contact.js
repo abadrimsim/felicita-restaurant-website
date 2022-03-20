@@ -24,21 +24,25 @@ function Contact() {
 	// Refs
 	let section = useRef(null);
 
-	// let tl = gsap.timeline({ delay: 0.3 });
+	// GSAP animation
+	let tl = gsap.timeline({ delay: 0.3 });
 
-	// // GSAP animation
-	// useEffect(() => {
-	// 	// Section Animation
-	// 	tl.from(section, {
-	// 		y: 100,
-	// 		opacity: 0,
-	// 		duration: 1.5,
-	// 		ease: Power4.easeOut,
-	// 	});
-	// }, [tl]);
+	useEffect(() => {
+		// Section Animation
+		tl.from(
+			section.children,
+			{
+				y: 100,
+				opacity: 0,
+				duration: 1.5,
+				ease: Power4.easeOut,
+			},
+			0.2
+		);
+	}, [tl]);
 
 	return (
-		<div data-scroll-section>
+		<>
 			<Navigation />
 			<PageBanner />
 			<div className={styles.pageContent} ref={(e) => (section = e)}>
@@ -51,18 +55,11 @@ function Contact() {
 					placeholder='blur'
 					blurDataURL='/blur/contact-us.jpg'
 					className={styles.contactImg}
-					data-scroll
-					data-scroll-speed='1'
 				/>
 
 				<div className={styles.pageText}>
 					<h2>Connect With Us!</h2>
-					<hr
-						className={styles.divider}
-						data-scroll
-						data-scroll-speed='-2'
-						data-scroll-direction='horizontal'
-					/>
+					<hr className={styles.divider} />
 					<p>
 						Wanted to book a reservation? Have any inquiries? We love to hear
 						what you think! Just fill in the form below and we’ll get back to
@@ -112,7 +109,7 @@ function Contact() {
 				</div>
 			</div>
 			<Footer />
-		</div>
+		</>
 	);
 }
 

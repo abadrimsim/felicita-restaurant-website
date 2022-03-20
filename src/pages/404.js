@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { useRef, useEffect } from 'react';
+import Link from 'next/link';
 
 // Import components
 import Footer from '../components/Footer/Footer';

@@ -36,61 +36,61 @@ function PrivateDining() {
 	let sectionEvents = useRef(null);
 	let gallery = useRef(null);
 
-	// gsap.registerPlugin(ScrollTrigger);
-	// let tl = gsap.timeline({ delay: 0.2 });
+	gsap.registerPlugin(ScrollTrigger);
+	let tl = gsap.timeline({ delay: 0.2 });
 
-	// // GSAP animation
-	// useEffect(() => {
-	// 	// Section Animation
-	// 	tl.from(
-	// 		section,
-	// 		{
-	// 			y: 100,
-	// 			opacity: 0,
-	// 			duration: 1.5,
+	// GSAP animation
+	useEffect(() => {
+		// Section Animation
+		tl.from(
+			section,
+			{
+				y: 100,
+				opacity: 0,
+				duration: 1.5,
 
-	// 			ease: Power4.easeOut,
-	// 		},
-	// 		0.5
-	// 	)
-	// 		.from(
-	// 			sectionEvents,
-	// 			{
-	// 				scrollTrigger: {
-	// 					trigger: sectionEvents,
-	// 					start: 'top bottom',
-	// 					end: '+=200',
-	// 					scrub: 1,
-	// 				},
-	// 				y: 100,
-	// 				opacity: 0,
-	// 				duration: 1.5,
-	// 				delay: 0.5,
-	// 				ease: Power4.easeOut,
-	// 			},
-	// 			0.5
-	// 		)
-	// 		.from(
-	// 			gallery,
-	// 			{
-	// 				scrollTrigger: {
-	// 					trigger: gallery,
-	// 					start: 'top bottom',
-	// 					end: '+=200',
-	// 					scrub: 1,
-	// 				},
-	// 				y: 100,
-	// 				opacity: 0,
-	// 				duration: 1.5,
-	// 				delay: 0.5,
-	// 				ease: Power4.easeOut,
-	// 			},
-	// 			0.5
-	// 		);
-	// }, [tl]);
+				ease: Power4.easeOut,
+			},
+			0.5
+		)
+			.from(
+				sectionEvents,
+				{
+					scrollTrigger: {
+						trigger: sectionEvents,
+						start: 'top bottom',
+						end: '+=200',
+						scrub: 1,
+					},
+					y: 100,
+					opacity: 0,
+					duration: 1.5,
+					delay: 0.5,
+					ease: Power4.easeOut,
+				},
+				0.5
+			)
+			.from(
+				gallery,
+				{
+					scrollTrigger: {
+						trigger: gallery,
+						start: 'top bottom',
+						end: '+=200',
+						scrub: 1,
+					},
+					y: 100,
+					opacity: 0,
+					duration: 1.5,
+					delay: 0.5,
+					ease: Power4.easeOut,
+				},
+				0.5
+			);
+	}, [tl]);
 
 	return (
-		<div data-scroll-section>
+		<>
 			<Navigation />
 			<PageBanner />
 
@@ -98,12 +98,7 @@ function PrivateDining() {
 				{/* Text Container */}
 				<div className={styles.pageText}>
 					<h2>Private Dining</h2>
-					<hr
-						className={styles.divider}
-						data-scroll
-						data-scroll-speed='-2'
-						data-scroll-direction='horizontal'
-					/>
+					<hr className={styles.divider} />
 					<div>
 						<h3>Lunch & Dinner</h3>
 						<p>
@@ -248,7 +243,7 @@ function PrivateDining() {
 			</div>
 
 			<Footer />
-		</div>
+		</>
 	);
 }
 

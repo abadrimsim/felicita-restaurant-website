@@ -9,6 +9,8 @@ function CustomCursor() {
 	useEffect(() => {
 		const onMouseMove = (e) => {
 			const { clientX, clientY } = e;
+
+			// Outer Circle
 			const mouseX = clientX - cursor.current.clientWidth / 2;
 			const mouseY = clientY - cursor.current.clientHeight / 2;
 
@@ -16,6 +18,7 @@ function CustomCursor() {
 			const miniX = clientX - cursorInner.current.clientWidth / 2;
 			const miniY = clientY - cursorInner.current.clientHeight / 2;
 
+			// If device uses touch, set cursor visibility to hidden
 			if (
 				'ontouchstart' in window ||
 				(window.DocumentTouch && document instanceof DocumentTouch)
@@ -34,7 +37,7 @@ function CustomCursor() {
 		window.addEventListener('mousemove', onMouseMove);
 		window.addEventListener('mouseeenter', onMouseMove);
 
-		// clean up effect when component unmounts
+		// Clean up effect when component unmounts
 		return () => {
 			window.removeEventListener('mousemove', onMouseMove);
 			window.removeEventListener('mouseeenter', onMouseMove);

@@ -11,11 +11,15 @@ import Story from '../components/Story/Story';
 
 export default function Home() {
 	return (
-		<div data-scroll-section>
+		<div>
 			<Head>
 				<title>Welcome to Felicità Ristorante</title>
-				<meta name='description' content='Come and visit Felicità Ristorante' />
-				<link rel='icon' href='/favicon.ico' />
+				<meta
+					name='description'
+					content='Serious food in a chilled-out setting, without pretence or the
+					price-tag, offering guilt-free Italian dining. Come and visit us today!'
+				/>
+				<link rel='icon' href='/felicita-logo.ico' />
 			</Head>
 
 			<main>

@@ -5,9 +5,7 @@ import styles from './PageBanner.module.scss';
 
 function PageBanner() {
 	// Ref
-
 	let content = useRef(null);
-
 	let tl = gsap.timeline();
 
 	// GSAP animation
@@ -20,6 +18,7 @@ function PageBanner() {
 			ease: Power4.easeOut,
 		});
 	}, [tl]);
+
 	return (
 		<div className={styles.bannerContainer}>
 			<h1 ref={(e) => (content = e)}>
