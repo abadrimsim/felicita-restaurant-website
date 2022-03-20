@@ -25,7 +25,6 @@ function MyApp({ Component, pageProps }) {
 		<LocomotiveScrollProvider
 			options={{
 				smooth: true,
-				lerp: 0.1,
 				scrollFromAnywhere: true,
 				reloadOnContextChange: true,
 				tablet: { smooth: false, breakpoint: 1280 },

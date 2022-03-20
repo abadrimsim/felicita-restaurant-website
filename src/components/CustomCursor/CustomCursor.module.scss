@@ -12,6 +12,7 @@
 	transition: 0.15s;
 	cursor: auto;
 	pointer-events: none;
+	visibility: hidden;
 }
 
 .cursorInner {
@@ -25,4 +26,5 @@
 	transform: translate3d(0, 0, 0);
 	transition: 0.18s;
 	pointer-events: none;
+	visibility: hidden;
 }

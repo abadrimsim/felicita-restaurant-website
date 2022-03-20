@@ -16,18 +16,22 @@ function CustomCursor() {
 			const miniX = clientX - cursorInner.current.clientWidth / 2;
 			const miniY = clientY - cursorInner.current.clientHeight / 2;
 
+			cursor.current.style.visibility = 'visible';
+			cursorInner.current.style.visibility = 'visible';
+
 			cursor.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
 			cursorInner.current.style.transform = `translate3d(${miniX}px, ${miniY}px, 0)`;
 		};
 
-		document.addEventListener('mousemove', onMouseMove);
-		document.addEventListener('mouseeenter', onMouseMove);
+		window.addEventListener('mousemove', onMouseMove);
+		window.addEventListener('mouseeenter', onMouseMove);
+		// window.addEventListener('touchstart', () => console.log('touch'));
 
 		// clean up effect when component unmounts
 		return () => {
 			// remove the event listener
-			document.removeEventListener('mousemove', onMouseMove);
-			document.removeEventListener('mouseeenter', onMouseMove);
+			window.removeEventListener('mousemove', onMouseMove);
+			window.removeEventListener('mouseeenter', onMouseMove);
 		};
 	}, []);
 	return (
