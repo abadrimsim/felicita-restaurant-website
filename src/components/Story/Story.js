@@ -11,37 +11,64 @@ import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import styles from './Story.module.scss';
 
 function Story() {
-	// const { scroll } = useLocomotiveScroll();
-	//  console.log(scroll);
-
-	// scroll.on('scroll', ScrollTrigger.update);
-
 	// Refs
 	let section = useRef(null);
-
 	// gsap.registerPlugin(ScrollTrigger);
+
+	// const { scroll } = useLocomotiveScroll();
+
 	// let tl = gsap.timeline();
 
-	// GSAP animation
+	// // GSAP animation
 	// useEffect(() => {
+	// 	if (!scroll) {
+	// 		return;
+	// 	}
+	// 	const element = scroll?.el;
+	// 	scroll.on('scroll', ScrollTrigger.update);
+
+	// 	ScrollTrigger.scrollerProxy(element, {
+	// 		scrollTop(value) {
+	// 			return arguments.length
+	// 				? scroll.scrollTo(value, 0, 0)
+	// 				: scroll.scroll.instance.scroll.y;
+	// 		},
+	// 		getBoundingClientRect() {
+	// 			return {
+	// 				top: 0,
+	// 				left: 0,
+	// 				width: window.innerWidth,
+	// 				height: window.innerHeight,
+	// 			};
+	// 		},
+	// 		pinType: element.style.transform ? 'transform' : 'fixed',
+	// 	});
+
 	// 	// Section Animation
-	// 	tl.from(section.children, {
+	// 	tl.from(element, {
 	// 		scrollTrigger: {
 	// 			trigger: section.children,
-	// 			start: 'top bottom',
-	// 			pinSpacing: false,
-	// 			end: '+=500', // end after scrolling 500px beyond the start
-	// 			scrub: 1,
+	// 			scroller: element,
+	// 			start: 'top top',
+	// 			end: '+=300', // end after scrolling 500px beyond the start
+	// 			scrub: true,
 	// 		},
-	// 		y: 100,
+	// 		y: 50,
 	// 		opacity: 0,
-	// 		duration: 1.5,
+	// 		duration: 1,
 	// 		stagger: 0.5,
 	// 	});
-	// }, [tl]);
+
+	// 	ScrollTrigger.addEventListener('refresh', () => scroll.update());
+	// 	ScrollTrigger.refresh();
+
+	// 	return () => {
+	// 		ScrollTrigger.removeEventListener('refresh', () => scroll?.update());
+	// 	};
+	// }, [scroll, tl]);
 
 	return (
-		<div className={styles.container} ref={(e) => (section = e)}>
+		<section className={styles.container} ref={(e) => (section = e)}>
 			<h2 className={styles.mainHeader}>
 				A place where you’ll find well-cooked, honest, uncomplicated but
 				imaginative food.
@@ -81,7 +108,7 @@ function Story() {
 					</Link>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
 

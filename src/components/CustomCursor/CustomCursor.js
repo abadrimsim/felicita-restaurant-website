@@ -12,7 +12,7 @@ function CustomCursor() {
 			const mouseX = clientX - cursor.current.clientWidth / 2;
 			const mouseY = clientY - cursor.current.clientHeight / 2;
 
-			// // Inner circle
+			// Inner circle
 			const miniX = clientX - cursorInner.current.clientWidth / 2;
 			const miniY = clientY - cursorInner.current.clientHeight / 2;
 
@@ -31,23 +31,13 @@ function CustomCursor() {
 			cursorInner.current.style.transform = `translate3d(${miniX}px, ${miniY}px, 0)`;
 		};
 
-		// const onTouch = () => {
-		// 	cursor.current.style.visibility = 'hidden';
-		// 	cursorInner.current.style.visibility = 'hidden';
-
-		// 	console.log('touch');
-		// };
-
 		window.addEventListener('mousemove', onMouseMove);
 		window.addEventListener('mouseeenter', onMouseMove);
-		// window.addEventListener('touchstart', onTouch);
 
 		// clean up effect when component unmounts
 		return () => {
-			// remove the event listener
 			window.removeEventListener('mousemove', onMouseMove);
 			window.removeEventListener('mouseeenter', onMouseMove);
-			// window.removeEventListener('touchstart', onTouch);
 		};
 	}, []);
 	return (
