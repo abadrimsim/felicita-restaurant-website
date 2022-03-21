@@ -4,11 +4,12 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
-import styles from './Carousel.module.scss';
-
 // Import GSAP
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
+
+// Import SASS file
+import styles from './Carousel.module.scss';
 
 function Carousel() {
 	// Testimonial Array
@@ -35,6 +36,7 @@ function Carousel() {
 			blurUrl: '/blur/testimonial-c.jpg',
 		},
 	];
+
 	// Create custom arrows for react-slick
 	const PrevArrow = ({ style, onClick }) => (
 		<div className='slick-arrow' style={{ ...style }} onClick={onClick}>

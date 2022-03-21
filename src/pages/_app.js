@@ -10,7 +10,7 @@ import '../styles/globals.scss';
 function MyApp({ Component, pageProps }) {
 	const [loading, setLoading] = useState(false);
 
-	// Display site preloader
+	// Display site preloader when transitioning to pages
 	useEffect(() => {
 		setLoading(true);
 		window.addEventListener('load', () => {

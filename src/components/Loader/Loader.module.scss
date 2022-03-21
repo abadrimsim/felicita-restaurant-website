@@ -46,6 +46,7 @@
 			$tertiary 10%,
 			$secondary-light 20%
 		);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		@include animation('shine 4s linear infinite');

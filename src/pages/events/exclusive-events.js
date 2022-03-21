@@ -2,17 +2,17 @@ import Image from 'next/image';
 import { useRef, useEffect } from 'react';
 import { SRLWrapper } from 'simple-react-lightbox';
 
-// Import components
-import Footer from '../components/Footer/Footer';
-import Navigation from '../components/Navigation/Navigation';
-import PageBanner from '../components/PageBanner/PageBanner';
-
 // Import GSAP
 import { gsap, Power4 } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 
+// Import components
+import Footer from '../../components/Footer/Footer';
+import Navigation from '../../components/Navigation/Navigation';
+import PageBanner from '../../components/PageBanner/PageBanner';
+
 // Import SASS file
-import styles from '../styles/Events.module.scss';
+import styles from '../../styles/Events.module.scss';
 
 function ExclusiveEvents() {
 	// Lightbox Styling

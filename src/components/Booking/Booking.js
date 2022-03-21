@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 // Import GSAP
@@ -9,6 +10,18 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 import styles from './Booking.module.scss';
 
 function Booking() {
+	const router = useRouter();
+
+	// Refs
+	let section = useRef(null);
+	let groupSec = useRef(null);
+	let privateSec = useRef(null);
+	let exclusiveSec = useRef(null);
+
+	// GSAP animation
+	gsap.registerPlugin(ScrollTrigger);
+	let tl = gsap.timeline({ delay: 0.2 });
+
 	// Booking Events Array
 	const bookEvents = [
 		{
@@ -31,32 +44,27 @@ function Booking() {
 		},
 	];
 
-	// Refs
-	let section = useRef(null);
-	let groupSec = useRef(null);
-	let privateSec = useRef(null);
-	let exclusiveSec = useRef(null);
-
-	// GSAP animation
-	gsap.registerPlugin(ScrollTrigger);
-	let tl = gsap.timeline({ delay: 0.2 });
-
 	useEffect(() => {
+		// Animation object
+		const stObj = {
+			start: 'top 80%',
+			end: '+=300',
+			scrub: 1,
+		};
+
 		const animObj = {
 			y: 100,
 			opacity: 0,
 			duration: 1.5,
 			stagger: 0.5,
 		};
-		// Section Animation
+
 		tl.from(
 			section.children,
 			{
 				scrollTrigger: {
 					trigger: section.children,
-					start: 'top 80%',
-					end: '+=300', // end after scrolling 300px beyond the start
-					scrub: 1,
+					...stObj,
 				},
 				y: 100,
 				opacity: 0,
@@ -68,27 +76,21 @@ function Booking() {
 			.from(groupSec.children, {
 				scrollTrigger: {
 					trigger: groupSec.children,
-					start: 'top 80%',
-					end: '+=300',
-					scrub: 1,
+					...stObj,
 				},
 				...animObj,
 			})
 			.from(privateSec.children, {
 				scrollTrigger: {
 					trigger: privateSec.children,
-					start: 'top 80%',
-					end: '+=300',
-					scrub: 1,
+					...stObj,
 				},
 				...animObj,
 			})
 			.from(exclusiveSec.children, {
 				scrollTrigger: {
 					trigger: exclusiveSec.children,
-					start: 'top 80%',
-					end: '+=300',
-					scrub: 1,
+					...stObj,
 				},
 				...animObj,
 			});
@@ -114,6 +116,7 @@ function Booking() {
 					placeholder='blur'
 					blurDataURL={bookEvents[0].blurUrl}
 					className={styles.bookingImg}
+					onClick={() => router.push('/events/group-dining')}
 				/>
 			</div>
 
@@ -127,6 +130,7 @@ function Booking() {
 					placeholder='blur'
 					blurDataURL={bookEvents[1].blurUrl}
 					className={styles.bookingImg}
+					onClick={() => router.push('/events/private-dining')}
 				/>
 				<div className={styles.bookingDesc}>
 					<h3>{bookEvents[1].title}</h3>
@@ -149,6 +153,7 @@ function Booking() {
 					placeholder='blur'
 					blurDataURL={bookEvents[2].blurUrl}
 					className={styles.bookingImg}
+					onClick={() => router.push('/events/exclusive-events')}
 				/>
 			</div>
 		</div>

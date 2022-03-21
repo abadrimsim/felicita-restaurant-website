@@ -2,19 +2,19 @@ import Image from 'next/image';
 import { useRef, useEffect } from 'react';
 import { SRLWrapper } from 'simple-react-lightbox';
 
-// Import components
-import Footer from '../components/Footer/Footer';
-import Navigation from '../components/Navigation/Navigation';
-import PageBanner from '../components/PageBanner/PageBanner';
-
 // Import GSAP
 import { gsap, Power4 } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js';
 
-// Import SASS file
-import styles from '../styles/Events.module.scss';
+// Import components
+import Footer from '../../components/Footer/Footer';
+import Navigation from '../../components/Navigation/Navigation';
+import PageBanner from '../../components/PageBanner/PageBanner';
 
-function GroupDining() {
+// Import SASS file
+import styles from '../../styles/Events.module.scss';
+
+function PrivateDining() {
 	// Lightbox Styling
 	const options = {
 		buttons: {
@@ -33,8 +33,7 @@ function GroupDining() {
 
 	// Refs
 	let section = useRef(null);
-	let sectionInside = useRef(null);
-	let sectionOutside = useRef(null);
+	let sectionEvents = useRef(null);
 	let gallery = useRef(null);
 
 	gsap.registerPlugin(ScrollTrigger);
@@ -55,27 +54,10 @@ function GroupDining() {
 			0.5
 		)
 			.from(
-				sectionInside,
+				sectionEvents,
 				{
 					scrollTrigger: {
-						trigger: sectionInside,
-						start: 'top bottom',
-						end: '+=200',
-						scrub: 1,
-					},
-					y: 100,
-					opacity: 0,
-					duration: 1.5,
-					delay: 0.5,
-					ease: Power4.easeOut,
-				},
-				0.5
-			)
-			.from(
-				sectionOutside,
-				{
-					scrollTrigger: {
-						trigger: sectionOutside,
+						trigger: sectionEvents,
 						start: 'top bottom',
 						end: '+=200',
 						scrub: 1,
@@ -115,36 +97,49 @@ function GroupDining() {
 			<div className={styles.container} ref={(e) => (section = e)}>
 				{/* Text Container */}
 				<div className={styles.pageText}>
-					<h2>Group Dining</h2>
+					<h2>Private Dining</h2>
 					<hr className={styles.divider} />
 					<div>
-						<h3>Restaurant Dining - Lunch & Dinner</h3>
+						<h3>Lunch & Dinner</h3>
 						<p>
-							For groups of 12 up to a maximum of 50 guests, a three course menu
-							derived from the current a la carte menu is applicable. The three
-							course menu is priced at $130 per person, with 4 dishes per course
-							to select on the day. A minimum food and beverage spend of $160
-							per person is applicable to all group bookings in the main dining
-							area. All dietary requirements can be catered for.
+							Located at the north eastern end of the restaurant, it boasts
+							spectacular views from your own private room and slice of the
+							terrace. The space can accommodate up to 16 guests for a seated
+							event.
+						</p>
+						<p>
+							For groups of 12 to 16 guests, a three course menu derived from
+							the current a la carte meni is applicable. The three course menu
+							priced at $130 per person, with 4 dishes per course to select from
+							on the day. Beverages are charged on consumption and a 10% service
+							charge applies on the total amount.
 						</p>
 					</div>
-					<div ref={(e) => (sectionInside = e)}>
-						<h3>Inside Dining - Window Tables</h3>
+					<div ref={(e) => (sectionEvents = e)}>
+						<h3>Cocktail Events</h3>
 						<p>
-							Tables are allocated by date of reservation. Your request will be
-							noted, howver is not guaranteed.
+							The Private Dining Room and terrace can be offered for a cocktail
+							reception in two differnt configurations:
 						</p>
-					</div>
-					<div ref={(e) => (sectionOutside = e)}>
-						<h3>Outside Dining</h3>
 						<p>
-							The outdoor terrace is covered by a heavy awning for protection,
-							with heaters and knee rugs available for additional warmth. This
-							is a weather permitting area, which means that in the event of
-							extremely bad weather we are unable to guarantee a backup table
-							inside. In the instance where a table in the main dining area is
-							not available, you will be seated at a table in our coctail
-							lounge.
+							<span>•</span>
+							The Private Dining Room and small section of the terrace can
+							accommodate up to a maximum of 30 guests.
+						</p>
+						<p>
+							<span>•</span>
+							The Private Dining Room and terrace to the glass balustrade edge
+							can accommodate up to a maximum of 60guests.
+						</p>
+						<p>
+							Please note that the area is sectioned off from the remainder of
+							the terrace and is not exclusively private as there would be other
+							guests seated on the terrace at the same time. A large portion of
+							this area is weather permitting also.
+						</p>
+						<p>
+							Our extensive canape menu is based on the best seasonal produce at
+							any given time.
 						</p>
 					</div>
 				</div>
@@ -155,92 +150,92 @@ function GroupDining() {
 						{/* Top Row */}
 						<div className={styles.imgThumbnail}>
 							<Image
-								src='/gallery-group-1.jpg'
-								alt='Dining Table Setup'
+								src='/gallery-private-1.jpg'
+								alt='Private Dining Area'
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
 								placeholder='blur'
-								blurDataURL='/blur/gallery-group-1.jpg'
+								blurDataURL='/blur/gallery-private-1.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
 							<Image
-								src='/gallery-group-2.jpg'
-								alt='Spaghetti Pomodoro'
+								src='/gallery-private-2.jpg'
+								alt='Private Dining Menu'
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
 								placeholder='blur'
-								blurDataURL='/blur/gallery-group-2.jpg'
+								blurDataURL='/blur/gallery-private-2.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
 							<Image
-								src='/gallery-group-3.jpg'
-								alt='Dining Table Setup'
+								src='/gallery-private-3.jpg'
+								alt='Private Service'
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
 								placeholder='blur'
-								blurDataURL='/blur/gallery-group-3.jpg'
+								blurDataURL='/blur/gallery-private-3.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
 							<Image
-								src='/gallery-group-4.jpg'
-								alt='Group Dining'
+								src='/gallery-private-4.jpg'
+								alt='Request for a Premium Wine'
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
 								placeholder='blur'
-								blurDataURL='/blur/gallery-group-4.jpg'
+								blurDataURL='/blur/gallery-private-4.jpg'
 							/>
 						</div>
 
 						{/* Bottom Row */}
 						<div className={styles.imgThumbnail}>
 							<Image
-								src='/gallery-group-5.jpg'
-								alt='Company Dinner Setup'
+								src='/gallery-private-5.jpg'
+								alt='Host Cocktail Events'
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
 								placeholder='blur'
-								blurDataURL='/blur/gallery-group-5.jpg'
+								blurDataURL='/blur/gallery-private-5.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
 							<Image
-								src='/gallery-group-6.jpg'
-								alt='Company Lunch Setup'
+								src='/gallery-private-6.jpg'
+								alt='Fancy Setup for Guests'
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
 								placeholder='blur'
-								blurDataURL='/blur/gallery-group-6.jpg'
+								blurDataURL='/blur/gallery-private-6.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
 							<Image
-								src='/gallery-group-7.jpg'
-								alt='Risotto Gamberi'
+								src='/gallery-private-7.jpg'
+								alt='Private Dinner'
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
 								placeholder='blur'
-								blurDataURL='/blur/gallery-group-7.jpg'
+								blurDataURL='/blur/gallery-private-7.jpg'
 							/>
 						</div>
 						<div className={styles.imgThumbnail}>
 							<Image
-								src='/gallery-group-8.jpg'
-								alt='Group Dining at Felicità'
+								src='/gallery-private-8.jpg'
+								alt='Private Dining at Felicità'
 								layout='fill'
 								objectFit='cover'
 								className={styles.item}
 								placeholder='blur'
-								blurDataURL='/blur/gallery-group-8.jpg'
+								blurDataURL='/blur/gallery-private-8.jpg'
 							/>
 						</div>
 					</div>
@@ -252,4 +247,4 @@ function GroupDining() {
 	);
 }
 
-export default GroupDining;
+export default PrivateDining;

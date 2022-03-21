@@ -22,6 +22,7 @@
 
 		.bookingImg {
 			transition: all 1s ease;
+			cursor: pointer;
 
 			&:hover {
 				filter: brightness(70%);

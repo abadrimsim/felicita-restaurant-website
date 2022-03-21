@@ -27,13 +27,13 @@ function Navigation() {
 						</Nav.Link>
 
 						<NavDropdown title='Events' id='navbarScrollingDropdown'>
-							<NavDropdown.Item href='/group-dining'>
+							<NavDropdown.Item href='/events/group-dining'>
 								Group Dining
 							</NavDropdown.Item>
-							<NavDropdown.Item href='/private-dining'>
+							<NavDropdown.Item href='/events/private-dining'>
 								Private Dining
 							</NavDropdown.Item>
-							<NavDropdown.Item href='/exclusive-events'>
+							<NavDropdown.Item href='/events/exclusive-events'>
 								Exclusive Events
 							</NavDropdown.Item>
 						</NavDropdown>
